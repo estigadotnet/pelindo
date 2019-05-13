@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration date="2019/05/13" author="e.World Technology Ltd.">
+  <project id="{C44F9D66-099F-4CF9-9DCC-1FF3E612E32E}" file="" name="project1" product="PHPMaker" version="15.0" datetime="2019/05/13 14:46:17" languagefolder="phplang" userlevel="-2,&quot;Anonymous&quot;,0;">
+    <table id="kapal_all_20162018_vasa" name="kapal_all_20162018_vasa" caption="Kapal" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="t0001_pelabuhan" name="t0001_pelabuhan" caption="Pelabuhan" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="t0002_jasa" name="t0002_jasa" caption="Jasa" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="v0001_periode" name="v0001_periode" caption="Kapal" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+    <table id="cf01_home" name="cf01_home.php" caption="Home" userlevel="-2,&quot;Anonymous&quot;,0;" priv="1" />
+  </project>
+</configuration>
