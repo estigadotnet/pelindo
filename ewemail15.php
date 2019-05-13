@@ -1,5 +1,5 @@
 <?php
-namespace PHPMaker2019\project1;
+namespace PHPMaker2019\pelindo_prj;
 ?>
 <form id="ew-email-form" class="ew-horizontal ew-form ew-email-form" action="<?php echo CurrentPageName() ?>">
 <?php if ($Page->CheckToken) { ?>

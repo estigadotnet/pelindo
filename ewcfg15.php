@@ -3,7 +3,7 @@
 /**
  * PHPMaker 2019 configuration file
  */
-namespace PHPMaker2019\project1;
+namespace PHPMaker2019\pelindo_prj;
 
 // Define namespace constant
 define(__NAMESPACE__ . '\PROJECT_NAMESPACE', __NAMESPACE__ . '\\');
@@ -35,18 +35,18 @@ define(PROJECT_NAMESPACE . "PRODUCT_VERSION", "15.0.10");
 define(PROJECT_NAMESPACE . "IS_WINDOWS", (strtolower(substr(PHP_OS, 0, 3)) === 'win')); // Is Windows OS
 define(PROJECT_NAMESPACE . "PATH_DELIMITER", ((IS_WINDOWS) ? "\\" : "/")); // Physical path delimiter
 define(PROJECT_NAMESPACE . "UNFORMAT_YEAR", 50); // Unformat year
-define(PROJECT_NAMESPACE . "PROJECT_NAME", "project1"); // Project name
+define(PROJECT_NAMESPACE . "PROJECT_NAME", "pelindo_prj"); // Project name
 define(PROJECT_NAMESPACE . "CONFIG_FILE_FOLDER", PROJECT_NAME); // Config file name
-define(PROJECT_NAMESPACE . "RANDOM_KEY", 'rrhc0fJnL0Mh8z96'); // Random key for encryption
+define(PROJECT_NAMESPACE . "RANDOM_KEY", 'ZddciHc7kl9pV0Zr'); // Random key for encryption
 define(PROJECT_NAMESPACE . "ENCRYPTION_KEY", ''); // Encryption key for data protection
-define(PROJECT_NAMESPACE . "PROJECT_STYLESHEET_FILENAME", "phpcss/project1.css"); // Project stylesheet file name
+define(PROJECT_NAMESPACE . "PROJECT_STYLESHEET_FILENAME", "phpcss/pelindo_prj.css"); // Project stylesheet file name
 define(PROJECT_NAMESPACE . "PROJECT_CHARSET", "utf-8"); // Project charset
 define(PROJECT_NAMESPACE . "IS_UTF8", TRUE); // Project charset
 define(PROJECT_NAMESPACE . "EMAIL_CHARSET", PROJECT_CHARSET); // Email charset
 define(PROJECT_NAMESPACE . "HIGHLIGHT_COMPARE", TRUE); // Highlight compare mode, TRUE(case-insensitive)|FALSE(case-sensitive)
 define(PROJECT_NAMESPACE . "FONT_SIZE", 14);
 define(PROJECT_NAMESPACE . "TEMP_IMAGE_FONT", "DejaVuSans"); // Font for temp files
-$PROJECT_ID = "{C44F9D66-099F-4CF9-9DCC-1FF3E612E32E}"; // Project ID (GUID)
+$PROJECT_ID = "{4C62D2CC-E7E3-42AE-8875-EDB884DF627D}"; // Project ID (GUID)
 $RELATED_PROJECT_ID = "";
 $RELATED_LANGUAGE_FOLDER = "";
 $COMPOSITE_KEY_SEPARATOR = ","; // Composite key separator

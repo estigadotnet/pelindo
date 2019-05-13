@@ -1,5 +1,5 @@
 <?php
-namespace PHPMaker2019\project1;
+namespace PHPMaker2019\pelindo_prj;
 
 // Session
 if (session_status() !== PHP_SESSION_ACTIVE)

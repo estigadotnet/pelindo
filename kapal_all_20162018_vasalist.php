@@ -1,5 +1,5 @@
 <?php
-namespace PHPMaker2019\project1;
+namespace PHPMaker2019\pelindo_prj;
 
 // Session
 if (session_status() !== PHP_SESSION_ACTIVE)
@@ -53,12 +53,10 @@ fkapal_all_20162018_vasalist.validateRequired = <?php echo json_encode(CLIENT_VA
 // Dynamic selection lists
 fkapal_all_20162018_vasalist.lists["x_MA_PELB"] = <?php echo $kapal_all_20162018_vasa_list->MA_PELB->Lookup->toClientList() ?>;
 fkapal_all_20162018_vasalist.lists["x_MA_PELB"].options = <?php echo JsonEncode($kapal_all_20162018_vasa_list->MA_PELB->lookupOptions()) ?>;
-fkapal_all_20162018_vasalist.lists["x_PERIODE"] = <?php echo $kapal_all_20162018_vasa_list->PERIODE->Lookup->toClientList() ?>;
-fkapal_all_20162018_vasalist.lists["x_PERIODE"].options = <?php echo JsonEncode($kapal_all_20162018_vasa_list->PERIODE->lookupOptions()) ?>;
-fkapal_all_20162018_vasalist.lists["x_NAMA_KAPAL"] = <?php echo $kapal_all_20162018_vasa_list->NAMA_KAPAL->Lookup->toClientList() ?>;
-fkapal_all_20162018_vasalist.lists["x_NAMA_KAPAL"].options = <?php echo JsonEncode($kapal_all_20162018_vasa_list->NAMA_KAPAL->lookupOptions()) ?>;
 fkapal_all_20162018_vasalist.lists["x_JASA"] = <?php echo $kapal_all_20162018_vasa_list->JASA->Lookup->toClientList() ?>;
 fkapal_all_20162018_vasalist.lists["x_JASA"].options = <?php echo JsonEncode($kapal_all_20162018_vasa_list->JASA->lookupOptions()) ?>;
+fkapal_all_20162018_vasalist.lists["x_PERIODE"] = <?php echo $kapal_all_20162018_vasa_list->PERIODE->Lookup->toClientList() ?>;
+fkapal_all_20162018_vasalist.lists["x_PERIODE"].options = <?php echo JsonEncode($kapal_all_20162018_vasa_list->PERIODE->lookupOptions()) ?>;
 
 // Form object for search
 var fkapal_all_20162018_vasalistsrch = currentSearchForm = new ew.Form("fkapal_all_20162018_vasalistsrch");
@@ -89,10 +87,10 @@ fkapal_all_20162018_vasalistsrch.validateRequired = <?php echo json_encode(CLIEN
 // Dynamic selection lists
 fkapal_all_20162018_vasalistsrch.lists["x_MA_PELB"] = <?php echo $kapal_all_20162018_vasa_list->MA_PELB->Lookup->toClientList() ?>;
 fkapal_all_20162018_vasalistsrch.lists["x_MA_PELB"].options = <?php echo JsonEncode($kapal_all_20162018_vasa_list->MA_PELB->lookupOptions()) ?>;
-fkapal_all_20162018_vasalistsrch.lists["x_PERIODE"] = <?php echo $kapal_all_20162018_vasa_list->PERIODE->Lookup->toClientList() ?>;
-fkapal_all_20162018_vasalistsrch.lists["x_PERIODE"].options = <?php echo JsonEncode($kapal_all_20162018_vasa_list->PERIODE->lookupOptions()) ?>;
 fkapal_all_20162018_vasalistsrch.lists["x_JASA"] = <?php echo $kapal_all_20162018_vasa_list->JASA->Lookup->toClientList() ?>;
 fkapal_all_20162018_vasalistsrch.lists["x_JASA"].options = <?php echo JsonEncode($kapal_all_20162018_vasa_list->JASA->lookupOptions()) ?>;
+fkapal_all_20162018_vasalistsrch.lists["x_PERIODE"] = <?php echo $kapal_all_20162018_vasa_list->PERIODE->Lookup->toClientList() ?>;
+fkapal_all_20162018_vasalistsrch.lists["x_PERIODE"].options = <?php echo JsonEncode($kapal_all_20162018_vasa_list->PERIODE->lookupOptions()) ?>;
 
 // Filters
 fkapal_all_20162018_vasalistsrch.filterList = <?php echo $kapal_all_20162018_vasa_list->getFilterList() ?>;
@@ -157,17 +155,12 @@ $kapal_all_20162018_vasa_list->renderRow();
 <?php } ?>
 </div>
 <div id="xsr_2" class="ew-row d-sm-flex">
-<?php if ($kapal_all_20162018_vasa->PERIODE->Visible) { // PERIODE ?>
-	<div id="xsc_PERIODE" class="ew-cell form-group">
-		<label for="x_PERIODE" class="ew-search-caption ew-label"><?php echo $kapal_all_20162018_vasa->PERIODE->caption() ?></label>
-		<span class="ew-search-operator"><?php echo $Language->phrase("=") ?><input type="hidden" name="z_PERIODE" id="z_PERIODE" value="="></span>
+<?php if ($kapal_all_20162018_vasa->MKPL_JENIS->Visible) { // MKPL_JENIS ?>
+	<div id="xsc_MKPL_JENIS" class="ew-cell form-group">
+		<label for="x_MKPL_JENIS" class="ew-search-caption ew-label"><?php echo $kapal_all_20162018_vasa->MKPL_JENIS->caption() ?></label>
+		<span class="ew-search-operator"><?php echo $Language->phrase("LIKE") ?><input type="hidden" name="z_MKPL_JENIS" id="z_MKPL_JENIS" value="LIKE"></span>
 		<span class="ew-search-field">
-<div class="input-group">
-	<select class="custom-select ew-custom-select" data-table="kapal_all_20162018_vasa" data-field="x_PERIODE" data-value-separator="<?php echo $kapal_all_20162018_vasa->PERIODE->displayValueSeparatorAttribute() ?>" id="x_PERIODE" name="x_PERIODE"<?php echo $kapal_all_20162018_vasa->PERIODE->editAttributes() ?>>
-		<?php echo $kapal_all_20162018_vasa->PERIODE->selectOptionListHtml("x_PERIODE") ?>
-	</select>
-</div>
-<?php echo $kapal_all_20162018_vasa->PERIODE->Lookup->getParamTag("p_x_PERIODE") ?>
+<input type="text" data-table="kapal_all_20162018_vasa" data-field="x_MKPL_JENIS" name="x_MKPL_JENIS" id="x_MKPL_JENIS" size="30" maxlength="10" placeholder="<?php echo HtmlEncode($kapal_all_20162018_vasa->MKPL_JENIS->getPlaceHolder()) ?>" value="<?php echo $kapal_all_20162018_vasa->MKPL_JENIS->EditValue ?>"<?php echo $kapal_all_20162018_vasa->MKPL_JENIS->editAttributes() ?>>
 </span>
 	</div>
 <?php } ?>
@@ -189,6 +182,22 @@ $kapal_all_20162018_vasa_list->renderRow();
 <?php } ?>
 </div>
 <div id="xsr_4" class="ew-row d-sm-flex">
+<?php if ($kapal_all_20162018_vasa->PERIODE->Visible) { // PERIODE ?>
+	<div id="xsc_PERIODE" class="ew-cell form-group">
+		<label for="x_PERIODE" class="ew-search-caption ew-label"><?php echo $kapal_all_20162018_vasa->PERIODE->caption() ?></label>
+		<span class="ew-search-operator"><?php echo $Language->phrase("=") ?><input type="hidden" name="z_PERIODE" id="z_PERIODE" value="="></span>
+		<span class="ew-search-field">
+<div class="input-group">
+	<select class="custom-select ew-custom-select" data-table="kapal_all_20162018_vasa" data-field="x_PERIODE" data-value-separator="<?php echo $kapal_all_20162018_vasa->PERIODE->displayValueSeparatorAttribute() ?>" id="x_PERIODE" name="x_PERIODE"<?php echo $kapal_all_20162018_vasa->PERIODE->editAttributes() ?>>
+		<?php echo $kapal_all_20162018_vasa->PERIODE->selectOptionListHtml("x_PERIODE") ?>
+	</select>
+</div>
+<?php echo $kapal_all_20162018_vasa->PERIODE->Lookup->getParamTag("p_x_PERIODE") ?>
+</span>
+	</div>
+<?php } ?>
+</div>
+<div id="xsr_5" class="ew-row d-sm-flex">
 	<button class="btn btn-primary" name="btn-submit" id="btn-submit" type="submit"><?php echo $Language->phrase("SearchBtn") ?></button>
 </div>
 	</div>
@@ -231,57 +240,12 @@ $kapal_all_20162018_vasa_list->ListOptions->render("header", "left");
 		</div></div></th>
 	<?php } ?>
 <?php } ?>
-<?php if ($kapal_all_20162018_vasa->NO_PPK1->Visible) { // NO_PPK1 ?>
-	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->NO_PPK1) == "") { ?>
-		<th data-name="NO_PPK1" class="<?php echo $kapal_all_20162018_vasa->NO_PPK1->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_NO_PPK1" class="kapal_all_20162018_vasa_NO_PPK1"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->NO_PPK1->caption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="NO_PPK1" class="<?php echo $kapal_all_20162018_vasa->NO_PPK1->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->NO_PPK1) ?>',1);"><div id="elh_kapal_all_20162018_vasa_NO_PPK1" class="kapal_all_20162018_vasa_NO_PPK1">
-			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->NO_PPK1->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->NO_PPK1->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->NO_PPK1->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
-		</div></div></th>
-	<?php } ?>
-<?php } ?>
-<?php if ($kapal_all_20162018_vasa->PERIODE->Visible) { // PERIODE ?>
-	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->PERIODE) == "") { ?>
-		<th data-name="PERIODE" class="<?php echo $kapal_all_20162018_vasa->PERIODE->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_PERIODE" class="kapal_all_20162018_vasa_PERIODE"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->PERIODE->caption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="PERIODE" class="<?php echo $kapal_all_20162018_vasa->PERIODE->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->PERIODE) ?>',1);"><div id="elh_kapal_all_20162018_vasa_PERIODE" class="kapal_all_20162018_vasa_PERIODE">
-			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->PERIODE->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->PERIODE->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->PERIODE->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
-		</div></div></th>
-	<?php } ?>
-<?php } ?>
-<?php if ($kapal_all_20162018_vasa->NAMA_KAPAL->Visible) { // NAMA_KAPAL ?>
-	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->NAMA_KAPAL) == "") { ?>
-		<th data-name="NAMA_KAPAL" class="<?php echo $kapal_all_20162018_vasa->NAMA_KAPAL->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_NAMA_KAPAL" class="kapal_all_20162018_vasa_NAMA_KAPAL"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->NAMA_KAPAL->caption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="NAMA_KAPAL" class="<?php echo $kapal_all_20162018_vasa->NAMA_KAPAL->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->NAMA_KAPAL) ?>',1);"><div id="elh_kapal_all_20162018_vasa_NAMA_KAPAL" class="kapal_all_20162018_vasa_NAMA_KAPAL">
-			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->NAMA_KAPAL->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->NAMA_KAPAL->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->NAMA_KAPAL->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
-		</div></div></th>
-	<?php } ?>
-<?php } ?>
 <?php if ($kapal_all_20162018_vasa->MKPL_JENIS->Visible) { // MKPL_JENIS ?>
 	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->MKPL_JENIS) == "") { ?>
 		<th data-name="MKPL_JENIS" class="<?php echo $kapal_all_20162018_vasa->MKPL_JENIS->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_MKPL_JENIS" class="kapal_all_20162018_vasa_MKPL_JENIS"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->MKPL_JENIS->caption() ?></div></div></th>
 	<?php } else { ?>
 		<th data-name="MKPL_JENIS" class="<?php echo $kapal_all_20162018_vasa->MKPL_JENIS->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->MKPL_JENIS) ?>',1);"><div id="elh_kapal_all_20162018_vasa_MKPL_JENIS" class="kapal_all_20162018_vasa_MKPL_JENIS">
 			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->MKPL_JENIS->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->MKPL_JENIS->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->MKPL_JENIS->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
-		</div></div></th>
-	<?php } ?>
-<?php } ?>
-<?php if ($kapal_all_20162018_vasa->GT_KAPAL->Visible) { // GT_KAPAL ?>
-	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->GT_KAPAL) == "") { ?>
-		<th data-name="GT_KAPAL" class="<?php echo $kapal_all_20162018_vasa->GT_KAPAL->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_GT_KAPAL" class="kapal_all_20162018_vasa_GT_KAPAL"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->GT_KAPAL->caption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="GT_KAPAL" class="<?php echo $kapal_all_20162018_vasa->GT_KAPAL->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->GT_KAPAL) ?>',1);"><div id="elh_kapal_all_20162018_vasa_GT_KAPAL" class="kapal_all_20162018_vasa_GT_KAPAL">
-			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->GT_KAPAL->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->GT_KAPAL->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->GT_KAPAL->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
-		</div></div></th>
-	<?php } ?>
-<?php } ?>
-<?php if ($kapal_all_20162018_vasa->LOA->Visible) { // LOA ?>
-	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->LOA) == "") { ?>
-		<th data-name="LOA" class="<?php echo $kapal_all_20162018_vasa->LOA->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_LOA" class="kapal_all_20162018_vasa_LOA"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->LOA->caption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="LOA" class="<?php echo $kapal_all_20162018_vasa->LOA->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->LOA) ?>',1);"><div id="elh_kapal_all_20162018_vasa_LOA" class="kapal_all_20162018_vasa_LOA">
-			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->LOA->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->LOA->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->LOA->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
 		</div></div></th>
 	<?php } ?>
 <?php } ?>
@@ -294,21 +258,12 @@ $kapal_all_20162018_vasa_list->ListOptions->render("header", "left");
 		</div></div></th>
 	<?php } ?>
 <?php } ?>
-<?php if ($kapal_all_20162018_vasa->JENIS_GERAKAN->Visible) { // JENIS_GERAKAN ?>
-	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->JENIS_GERAKAN) == "") { ?>
-		<th data-name="JENIS_GERAKAN" class="<?php echo $kapal_all_20162018_vasa->JENIS_GERAKAN->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_JENIS_GERAKAN" class="kapal_all_20162018_vasa_JENIS_GERAKAN"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->JENIS_GERAKAN->caption() ?></div></div></th>
+<?php if ($kapal_all_20162018_vasa->PERIODE->Visible) { // PERIODE ?>
+	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->PERIODE) == "") { ?>
+		<th data-name="PERIODE" class="<?php echo $kapal_all_20162018_vasa->PERIODE->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_PERIODE" class="kapal_all_20162018_vasa_PERIODE"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->PERIODE->caption() ?></div></div></th>
 	<?php } else { ?>
-		<th data-name="JENIS_GERAKAN" class="<?php echo $kapal_all_20162018_vasa->JENIS_GERAKAN->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->JENIS_GERAKAN) ?>',1);"><div id="elh_kapal_all_20162018_vasa_JENIS_GERAKAN" class="kapal_all_20162018_vasa_JENIS_GERAKAN">
-			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->JENIS_GERAKAN->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->JENIS_GERAKAN->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->JENIS_GERAKAN->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
-		</div></div></th>
-	<?php } ?>
-<?php } ?>
-<?php if ($kapal_all_20162018_vasa->BENDERA->Visible) { // BENDERA ?>
-	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->BENDERA) == "") { ?>
-		<th data-name="BENDERA" class="<?php echo $kapal_all_20162018_vasa->BENDERA->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_BENDERA" class="kapal_all_20162018_vasa_BENDERA"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->BENDERA->caption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="BENDERA" class="<?php echo $kapal_all_20162018_vasa->BENDERA->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->BENDERA) ?>',1);"><div id="elh_kapal_all_20162018_vasa_BENDERA" class="kapal_all_20162018_vasa_BENDERA">
-			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->BENDERA->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->BENDERA->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->BENDERA->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
+		<th data-name="PERIODE" class="<?php echo $kapal_all_20162018_vasa->PERIODE->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->PERIODE) ?>',1);"><div id="elh_kapal_all_20162018_vasa_PERIODE" class="kapal_all_20162018_vasa_PERIODE">
+			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->PERIODE->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->PERIODE->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->PERIODE->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
 		</div></div></th>
 	<?php } ?>
 <?php } ?>
@@ -327,24 +282,6 @@ $kapal_all_20162018_vasa_list->ListOptions->render("header", "left");
 	<?php } else { ?>
 		<th data-name="TGL_SELESAI_REA" class="<?php echo $kapal_all_20162018_vasa->TGL_SELESAI_REA->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->TGL_SELESAI_REA) ?>',1);"><div id="elh_kapal_all_20162018_vasa_TGL_SELESAI_REA" class="kapal_all_20162018_vasa_TGL_SELESAI_REA">
 			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->TGL_SELESAI_REA->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->TGL_SELESAI_REA->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->TGL_SELESAI_REA->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
-		</div></div></th>
-	<?php } ?>
-<?php } ?>
-<?php if ($kapal_all_20162018_vasa->LOKASI_AWAL->Visible) { // LOKASI_AWAL ?>
-	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->LOKASI_AWAL) == "") { ?>
-		<th data-name="LOKASI_AWAL" class="<?php echo $kapal_all_20162018_vasa->LOKASI_AWAL->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_LOKASI_AWAL" class="kapal_all_20162018_vasa_LOKASI_AWAL"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->LOKASI_AWAL->caption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="LOKASI_AWAL" class="<?php echo $kapal_all_20162018_vasa->LOKASI_AWAL->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->LOKASI_AWAL) ?>',1);"><div id="elh_kapal_all_20162018_vasa_LOKASI_AWAL" class="kapal_all_20162018_vasa_LOKASI_AWAL">
-			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->LOKASI_AWAL->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->LOKASI_AWAL->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->LOKASI_AWAL->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
-		</div></div></th>
-	<?php } ?>
-<?php } ?>
-<?php if ($kapal_all_20162018_vasa->LOKASI_AKHIR->Visible) { // LOKASI_AKHIR ?>
-	<?php if ($kapal_all_20162018_vasa->sortUrl($kapal_all_20162018_vasa->LOKASI_AKHIR) == "") { ?>
-		<th data-name="LOKASI_AKHIR" class="<?php echo $kapal_all_20162018_vasa->LOKASI_AKHIR->headerCellClass() ?>"><div id="elh_kapal_all_20162018_vasa_LOKASI_AKHIR" class="kapal_all_20162018_vasa_LOKASI_AKHIR"><div class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->LOKASI_AKHIR->caption() ?></div></div></th>
-	<?php } else { ?>
-		<th data-name="LOKASI_AKHIR" class="<?php echo $kapal_all_20162018_vasa->LOKASI_AKHIR->headerCellClass() ?>"><div class="ew-pointer" onclick="ew.sort(event,'<?php echo $kapal_all_20162018_vasa->SortUrl($kapal_all_20162018_vasa->LOKASI_AKHIR) ?>',1);"><div id="elh_kapal_all_20162018_vasa_LOKASI_AKHIR" class="kapal_all_20162018_vasa_LOKASI_AKHIR">
-			<div class="ew-table-header-btn"><span class="ew-table-header-caption"><?php echo $kapal_all_20162018_vasa->LOKASI_AKHIR->caption() ?></span><span class="ew-table-header-sort"><?php if ($kapal_all_20162018_vasa->LOKASI_AKHIR->getSort() == "ASC") { ?><i class="fa fa-sort-up"></i><?php } elseif ($kapal_all_20162018_vasa->LOKASI_AKHIR->getSort() == "DESC") { ?><i class="fa fa-sort-down"></i><?php } ?></span></div>
 		</div></div></th>
 	<?php } ?>
 <?php } ?>
@@ -421,51 +358,11 @@ $kapal_all_20162018_vasa_list->ListOptions->render("body", "left", $kapal_all_20
 </span>
 </td>
 	<?php } ?>
-	<?php if ($kapal_all_20162018_vasa->NO_PPK1->Visible) { // NO_PPK1 ?>
-		<td data-name="NO_PPK1"<?php echo $kapal_all_20162018_vasa->NO_PPK1->cellAttributes() ?>>
-<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_NO_PPK1" class="kapal_all_20162018_vasa_NO_PPK1">
-<span<?php echo $kapal_all_20162018_vasa->NO_PPK1->viewAttributes() ?>>
-<?php echo $kapal_all_20162018_vasa->NO_PPK1->getViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
-	<?php if ($kapal_all_20162018_vasa->PERIODE->Visible) { // PERIODE ?>
-		<td data-name="PERIODE"<?php echo $kapal_all_20162018_vasa->PERIODE->cellAttributes() ?>>
-<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_PERIODE" class="kapal_all_20162018_vasa_PERIODE">
-<span<?php echo $kapal_all_20162018_vasa->PERIODE->viewAttributes() ?>>
-<?php echo $kapal_all_20162018_vasa->PERIODE->getViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
-	<?php if ($kapal_all_20162018_vasa->NAMA_KAPAL->Visible) { // NAMA_KAPAL ?>
-		<td data-name="NAMA_KAPAL"<?php echo $kapal_all_20162018_vasa->NAMA_KAPAL->cellAttributes() ?>>
-<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_NAMA_KAPAL" class="kapal_all_20162018_vasa_NAMA_KAPAL">
-<span<?php echo $kapal_all_20162018_vasa->NAMA_KAPAL->viewAttributes() ?>>
-<?php echo $kapal_all_20162018_vasa->NAMA_KAPAL->getViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
 	<?php if ($kapal_all_20162018_vasa->MKPL_JENIS->Visible) { // MKPL_JENIS ?>
 		<td data-name="MKPL_JENIS"<?php echo $kapal_all_20162018_vasa->MKPL_JENIS->cellAttributes() ?>>
 <span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_MKPL_JENIS" class="kapal_all_20162018_vasa_MKPL_JENIS">
 <span<?php echo $kapal_all_20162018_vasa->MKPL_JENIS->viewAttributes() ?>>
 <?php echo $kapal_all_20162018_vasa->MKPL_JENIS->getViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
-	<?php if ($kapal_all_20162018_vasa->GT_KAPAL->Visible) { // GT_KAPAL ?>
-		<td data-name="GT_KAPAL"<?php echo $kapal_all_20162018_vasa->GT_KAPAL->cellAttributes() ?>>
-<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_GT_KAPAL" class="kapal_all_20162018_vasa_GT_KAPAL">
-<span<?php echo $kapal_all_20162018_vasa->GT_KAPAL->viewAttributes() ?>>
-<?php echo $kapal_all_20162018_vasa->GT_KAPAL->getViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
-	<?php if ($kapal_all_20162018_vasa->LOA->Visible) { // LOA ?>
-		<td data-name="LOA"<?php echo $kapal_all_20162018_vasa->LOA->cellAttributes() ?>>
-<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_LOA" class="kapal_all_20162018_vasa_LOA">
-<span<?php echo $kapal_all_20162018_vasa->LOA->viewAttributes() ?>>
-<?php echo $kapal_all_20162018_vasa->LOA->getViewValue() ?></span>
 </span>
 </td>
 	<?php } ?>
@@ -477,19 +374,11 @@ $kapal_all_20162018_vasa_list->ListOptions->render("body", "left", $kapal_all_20
 </span>
 </td>
 	<?php } ?>
-	<?php if ($kapal_all_20162018_vasa->JENIS_GERAKAN->Visible) { // JENIS_GERAKAN ?>
-		<td data-name="JENIS_GERAKAN"<?php echo $kapal_all_20162018_vasa->JENIS_GERAKAN->cellAttributes() ?>>
-<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_JENIS_GERAKAN" class="kapal_all_20162018_vasa_JENIS_GERAKAN">
-<span<?php echo $kapal_all_20162018_vasa->JENIS_GERAKAN->viewAttributes() ?>>
-<?php echo $kapal_all_20162018_vasa->JENIS_GERAKAN->getViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
-	<?php if ($kapal_all_20162018_vasa->BENDERA->Visible) { // BENDERA ?>
-		<td data-name="BENDERA"<?php echo $kapal_all_20162018_vasa->BENDERA->cellAttributes() ?>>
-<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_BENDERA" class="kapal_all_20162018_vasa_BENDERA">
-<span<?php echo $kapal_all_20162018_vasa->BENDERA->viewAttributes() ?>>
-<?php echo $kapal_all_20162018_vasa->BENDERA->getViewValue() ?></span>
+	<?php if ($kapal_all_20162018_vasa->PERIODE->Visible) { // PERIODE ?>
+		<td data-name="PERIODE"<?php echo $kapal_all_20162018_vasa->PERIODE->cellAttributes() ?>>
+<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_PERIODE" class="kapal_all_20162018_vasa_PERIODE">
+<span<?php echo $kapal_all_20162018_vasa->PERIODE->viewAttributes() ?>>
+<?php echo $kapal_all_20162018_vasa->PERIODE->getViewValue() ?></span>
 </span>
 </td>
 	<?php } ?>
@@ -506,22 +395,6 @@ $kapal_all_20162018_vasa_list->ListOptions->render("body", "left", $kapal_all_20
 <span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_TGL_SELESAI_REA" class="kapal_all_20162018_vasa_TGL_SELESAI_REA">
 <span<?php echo $kapal_all_20162018_vasa->TGL_SELESAI_REA->viewAttributes() ?>>
 <?php echo $kapal_all_20162018_vasa->TGL_SELESAI_REA->getViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
-	<?php if ($kapal_all_20162018_vasa->LOKASI_AWAL->Visible) { // LOKASI_AWAL ?>
-		<td data-name="LOKASI_AWAL"<?php echo $kapal_all_20162018_vasa->LOKASI_AWAL->cellAttributes() ?>>
-<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_LOKASI_AWAL" class="kapal_all_20162018_vasa_LOKASI_AWAL">
-<span<?php echo $kapal_all_20162018_vasa->LOKASI_AWAL->viewAttributes() ?>>
-<?php echo $kapal_all_20162018_vasa->LOKASI_AWAL->getViewValue() ?></span>
-</span>
-</td>
-	<?php } ?>
-	<?php if ($kapal_all_20162018_vasa->LOKASI_AKHIR->Visible) { // LOKASI_AKHIR ?>
-		<td data-name="LOKASI_AKHIR"<?php echo $kapal_all_20162018_vasa->LOKASI_AKHIR->cellAttributes() ?>>
-<span id="el<?php echo $kapal_all_20162018_vasa_list->RowCnt ?>_kapal_all_20162018_vasa_LOKASI_AKHIR" class="kapal_all_20162018_vasa_LOKASI_AKHIR">
-<span<?php echo $kapal_all_20162018_vasa->LOKASI_AKHIR->viewAttributes() ?>>
-<?php echo $kapal_all_20162018_vasa->LOKASI_AKHIR->getViewValue() ?></span>
 </span>
 </td>
 	<?php } ?>

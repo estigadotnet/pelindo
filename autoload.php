@@ -1,5 +1,5 @@
 <?php
-namespace PHPMaker2019\project1;
+namespace PHPMaker2019\pelindo_prj;
 
 // Relative path
 if (!isset($RELATIVE_PATH)) {

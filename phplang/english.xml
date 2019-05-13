@@ -699,6 +699,12 @@
   <project>
     <phrase id="bodytitle" value="PELINDO III" />
     <phrase id="footertext" value="&amp;copy;2019 ESTIGADOTNET. All rights reserved." />
+    <menu id="8">
+      <phrase id="menutext" value="v 0002 pelabuhan" />
+    </menu>
+    <menu id="9">
+      <phrase id="menutext" value="v 0003 jasa" />
+    </menu>
     <menu id="7">
       <phrase id="menutext" value="Home" />
     </menu>
@@ -708,12 +714,6 @@
     <menu id="6">
       <phrase id="menutext" value="Setup" />
     </menu>
-    <menu id="3">
-      <phrase id="menutext" value="Pelabuhan" />
-    </menu>
-    <menu id="4">
-      <phrase id="menutext" value="Jasa" />
-    </menu>
     <menu id="5">
       <phrase id="menutext" value="Kapal" />
     </menu>
@@ -722,62 +722,44 @@
       <field id="ma_pelb">
         <phrase id="fldcaption" value="Pelabuhan" />
       </field>
-      <field id="no_ppk1">
-        <phrase id="fldcaption" value="NO PPK1" />
+      <field id="mkpl_jenis">
+        <phrase id="fldcaption" value="Jenis" />
+      </field>
+      <field id="jasa">
+        <phrase id="fldcaption" value="Jasa" />
       </field>
       <field id="periode">
-        <phrase id="fldcaption" value="PERIODE" />
+        <phrase id="fldcaption" value="Periode" />
+      </field>
+      <field id="tgl_mulai_rea">
+        <phrase id="fldcaption" value="Tgl. Mulai" />
+      </field>
+      <field id="tgl_selesai_rea">
+        <phrase id="fldcaption" value="Tgl. Selesai" />
+      </field>
+      <field id="no_ppk1">
+        <phrase id="fldcaption" value="No. PPK-1" />
       </field>
       <field id="nama_kapal">
-        <phrase id="fldcaption" value="NAMA KAPAL" />
-      </field>
-      <field id="mkpl_jenis">
-        <phrase id="fldcaption" value="MKPL JENIS" />
+        <phrase id="fldcaption" value="Nama Kapal" />
       </field>
       <field id="gt_kapal">
-        <phrase id="fldcaption" value="GT KAPAL" />
+        <phrase id="fldcaption" value="Kapal GT" />
       </field>
       <field id="loa">
         <phrase id="fldcaption" value="LOA" />
       </field>
-      <field id="jasa">
-        <phrase id="fldcaption" value="JASA" />
-      </field>
       <field id="jenis_gerakan">
-        <phrase id="fldcaption" value="JENIS GERAKAN" />
+        <phrase id="fldcaption" value="Jenis Gerakan" />
       </field>
       <field id="bendera">
-        <phrase id="fldcaption" value="BENDERA" />
-      </field>
-      <field id="tgl_mulai_rea">
-        <phrase id="fldcaption" value="TGL MULAI REA" />
-      </field>
-      <field id="tgl_selesai_rea">
-        <phrase id="fldcaption" value="TGL SELESAI REA" />
+        <phrase id="fldcaption" value="Bendera" />
       </field>
       <field id="lokasi_awal">
-        <phrase id="fldcaption" value="LOKASI AWAL" />
+        <phrase id="fldcaption" value="Lokasi Awal" />
       </field>
       <field id="lokasi_akhir">
-        <phrase id="fldcaption" value="LOKASI AKHIR" />
-      </field>
-    </table>
-    <table id="t0001_pelabuhan">
-      <phrase id="tblcaption" value="Pelabuhan" />
-      <field id="id">
-        <phrase id="fldcaption" value="id" />
-      </field>
-      <field id="pelabuhan">
-        <phrase id="fldcaption" value="pelabuhan" />
-      </field>
-    </table>
-    <table id="t0002_jasa">
-      <phrase id="tblcaption" value="Jasa" />
-      <field id="id">
-        <phrase id="fldcaption" value="id" />
-      </field>
-      <field id="jasa">
-        <phrase id="fldcaption" value="jasa" />
+        <phrase id="fldcaption" value="Lokasi Akhir" />
       </field>
     </table>
     <table id="v0001_periode">
@@ -794,6 +776,18 @@
     </table>
     <table id="cf01_home">
       <phrase id="tblcaption" value="Home" />
+    </table>
+    <table id="v0002_pelabuhan">
+      <phrase id="tblcaption" value="v 0002 pelabuhan" />
+      <field id="ma_pelb">
+        <phrase id="fldcaption" value="ma pelb" />
+      </field>
+    </table>
+    <table id="v0003_jasa">
+      <phrase id="tblcaption" value="v 0003 jasa" />
+      <field id="jasa">
+        <phrase id="fldcaption" value="jasa" />
+      </field>
     </table>
   </project>
 </ew-language>

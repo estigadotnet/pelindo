@@ -1,5 +1,5 @@
 <?php
-namespace PHPMaker2019\project1;
+namespace PHPMaker2019\pelindo_prj;
 
 /**
  * Page class
@@ -11,7 +11,7 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 	public $PageID = "list";
 
 	// Project ID
-	public $ProjectID = "{C44F9D66-099F-4CF9-9DCC-1FF3E612E32E}";
+	public $ProjectID = "{4C62D2CC-E7E3-42AE-8875-EDB884DF627D}";
 
 	// Table name
 	public $TableName = 'kapal_all_20162018_vasa';
@@ -661,19 +661,19 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		// Set up list options
 		$this->setupListOptions();
 		$this->MA_PELB->setVisibility();
-		$this->NO_PPK1->setVisibility();
-		$this->PERIODE->setVisibility();
-		$this->NAMA_KAPAL->setVisibility();
 		$this->MKPL_JENIS->setVisibility();
-		$this->GT_KAPAL->setVisibility();
-		$this->LOA->setVisibility();
 		$this->JASA->setVisibility();
-		$this->JENIS_GERAKAN->setVisibility();
-		$this->BENDERA->setVisibility();
+		$this->PERIODE->setVisibility();
 		$this->TGL_MULAI_REA->setVisibility();
 		$this->TGL_SELESAI_REA->setVisibility();
-		$this->LOKASI_AWAL->setVisibility();
-		$this->LOKASI_AKHIR->setVisibility();
+		$this->NO_PPK1->Visible = FALSE;
+		$this->NAMA_KAPAL->Visible = FALSE;
+		$this->GT_KAPAL->Visible = FALSE;
+		$this->LOA->Visible = FALSE;
+		$this->JENIS_GERAKAN->Visible = FALSE;
+		$this->BENDERA->Visible = FALSE;
+		$this->LOKASI_AWAL->Visible = FALSE;
+		$this->LOKASI_AKHIR->Visible = FALSE;
 		$this->hideFieldsForAddEdit();
 
 		// Global Page Loading event (in userfn*.php)
@@ -708,9 +708,9 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 
 		// Set up lookup cache
 		$this->setupLookupOptions($this->MA_PELB);
+		$this->setupLookupOptions($this->JASA);
 		$this->setupLookupOptions($this->PERIODE);
 		$this->setupLookupOptions($this->NAMA_KAPAL);
-		$this->setupLookupOptions($this->JASA);
 
 		// Search filters
 		$srchAdvanced = ""; // Advanced search filter
@@ -924,17 +924,17 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		$filterList = "";
 		$savedFilterList = "";
 		$filterList = Concat($filterList, $this->MA_PELB->AdvancedSearch->toJson(), ","); // Field MA_PELB
-		$filterList = Concat($filterList, $this->NO_PPK1->AdvancedSearch->toJson(), ","); // Field NO_PPK1
-		$filterList = Concat($filterList, $this->PERIODE->AdvancedSearch->toJson(), ","); // Field PERIODE
-		$filterList = Concat($filterList, $this->NAMA_KAPAL->AdvancedSearch->toJson(), ","); // Field NAMA_KAPAL
 		$filterList = Concat($filterList, $this->MKPL_JENIS->AdvancedSearch->toJson(), ","); // Field MKPL_JENIS
-		$filterList = Concat($filterList, $this->GT_KAPAL->AdvancedSearch->toJson(), ","); // Field GT_KAPAL
-		$filterList = Concat($filterList, $this->LOA->AdvancedSearch->toJson(), ","); // Field LOA
 		$filterList = Concat($filterList, $this->JASA->AdvancedSearch->toJson(), ","); // Field JASA
-		$filterList = Concat($filterList, $this->JENIS_GERAKAN->AdvancedSearch->toJson(), ","); // Field JENIS_GERAKAN
-		$filterList = Concat($filterList, $this->BENDERA->AdvancedSearch->toJson(), ","); // Field BENDERA
+		$filterList = Concat($filterList, $this->PERIODE->AdvancedSearch->toJson(), ","); // Field PERIODE
 		$filterList = Concat($filterList, $this->TGL_MULAI_REA->AdvancedSearch->toJson(), ","); // Field TGL_MULAI_REA
 		$filterList = Concat($filterList, $this->TGL_SELESAI_REA->AdvancedSearch->toJson(), ","); // Field TGL_SELESAI_REA
+		$filterList = Concat($filterList, $this->NO_PPK1->AdvancedSearch->toJson(), ","); // Field NO_PPK1
+		$filterList = Concat($filterList, $this->NAMA_KAPAL->AdvancedSearch->toJson(), ","); // Field NAMA_KAPAL
+		$filterList = Concat($filterList, $this->GT_KAPAL->AdvancedSearch->toJson(), ","); // Field GT_KAPAL
+		$filterList = Concat($filterList, $this->LOA->AdvancedSearch->toJson(), ","); // Field LOA
+		$filterList = Concat($filterList, $this->JENIS_GERAKAN->AdvancedSearch->toJson(), ","); // Field JENIS_GERAKAN
+		$filterList = Concat($filterList, $this->BENDERA->AdvancedSearch->toJson(), ","); // Field BENDERA
 		$filterList = Concat($filterList, $this->LOKASI_AWAL->AdvancedSearch->toJson(), ","); // Field LOKASI_AWAL
 		$filterList = Concat($filterList, $this->LOKASI_AKHIR->AdvancedSearch->toJson(), ","); // Field LOKASI_AKHIR
 
@@ -979,13 +979,21 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		$this->MA_PELB->AdvancedSearch->SearchOperator2 = @$filter["w_MA_PELB"];
 		$this->MA_PELB->AdvancedSearch->save();
 
-		// Field NO_PPK1
-		$this->NO_PPK1->AdvancedSearch->SearchValue = @$filter["x_NO_PPK1"];
-		$this->NO_PPK1->AdvancedSearch->SearchOperator = @$filter["z_NO_PPK1"];
-		$this->NO_PPK1->AdvancedSearch->SearchCondition = @$filter["v_NO_PPK1"];
-		$this->NO_PPK1->AdvancedSearch->SearchValue2 = @$filter["y_NO_PPK1"];
-		$this->NO_PPK1->AdvancedSearch->SearchOperator2 = @$filter["w_NO_PPK1"];
-		$this->NO_PPK1->AdvancedSearch->save();
+		// Field MKPL_JENIS
+		$this->MKPL_JENIS->AdvancedSearch->SearchValue = @$filter["x_MKPL_JENIS"];
+		$this->MKPL_JENIS->AdvancedSearch->SearchOperator = @$filter["z_MKPL_JENIS"];
+		$this->MKPL_JENIS->AdvancedSearch->SearchCondition = @$filter["v_MKPL_JENIS"];
+		$this->MKPL_JENIS->AdvancedSearch->SearchValue2 = @$filter["y_MKPL_JENIS"];
+		$this->MKPL_JENIS->AdvancedSearch->SearchOperator2 = @$filter["w_MKPL_JENIS"];
+		$this->MKPL_JENIS->AdvancedSearch->save();
+
+		// Field JASA
+		$this->JASA->AdvancedSearch->SearchValue = @$filter["x_JASA"];
+		$this->JASA->AdvancedSearch->SearchOperator = @$filter["z_JASA"];
+		$this->JASA->AdvancedSearch->SearchCondition = @$filter["v_JASA"];
+		$this->JASA->AdvancedSearch->SearchValue2 = @$filter["y_JASA"];
+		$this->JASA->AdvancedSearch->SearchOperator2 = @$filter["w_JASA"];
+		$this->JASA->AdvancedSearch->save();
 
 		// Field PERIODE
 		$this->PERIODE->AdvancedSearch->SearchValue = @$filter["x_PERIODE"];
@@ -995,6 +1003,30 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		$this->PERIODE->AdvancedSearch->SearchOperator2 = @$filter["w_PERIODE"];
 		$this->PERIODE->AdvancedSearch->save();
 
+		// Field TGL_MULAI_REA
+		$this->TGL_MULAI_REA->AdvancedSearch->SearchValue = @$filter["x_TGL_MULAI_REA"];
+		$this->TGL_MULAI_REA->AdvancedSearch->SearchOperator = @$filter["z_TGL_MULAI_REA"];
+		$this->TGL_MULAI_REA->AdvancedSearch->SearchCondition = @$filter["v_TGL_MULAI_REA"];
+		$this->TGL_MULAI_REA->AdvancedSearch->SearchValue2 = @$filter["y_TGL_MULAI_REA"];
+		$this->TGL_MULAI_REA->AdvancedSearch->SearchOperator2 = @$filter["w_TGL_MULAI_REA"];
+		$this->TGL_MULAI_REA->AdvancedSearch->save();
+
+		// Field TGL_SELESAI_REA
+		$this->TGL_SELESAI_REA->AdvancedSearch->SearchValue = @$filter["x_TGL_SELESAI_REA"];
+		$this->TGL_SELESAI_REA->AdvancedSearch->SearchOperator = @$filter["z_TGL_SELESAI_REA"];
+		$this->TGL_SELESAI_REA->AdvancedSearch->SearchCondition = @$filter["v_TGL_SELESAI_REA"];
+		$this->TGL_SELESAI_REA->AdvancedSearch->SearchValue2 = @$filter["y_TGL_SELESAI_REA"];
+		$this->TGL_SELESAI_REA->AdvancedSearch->SearchOperator2 = @$filter["w_TGL_SELESAI_REA"];
+		$this->TGL_SELESAI_REA->AdvancedSearch->save();
+
+		// Field NO_PPK1
+		$this->NO_PPK1->AdvancedSearch->SearchValue = @$filter["x_NO_PPK1"];
+		$this->NO_PPK1->AdvancedSearch->SearchOperator = @$filter["z_NO_PPK1"];
+		$this->NO_PPK1->AdvancedSearch->SearchCondition = @$filter["v_NO_PPK1"];
+		$this->NO_PPK1->AdvancedSearch->SearchValue2 = @$filter["y_NO_PPK1"];
+		$this->NO_PPK1->AdvancedSearch->SearchOperator2 = @$filter["w_NO_PPK1"];
+		$this->NO_PPK1->AdvancedSearch->save();
+
 		// Field NAMA_KAPAL
 		$this->NAMA_KAPAL->AdvancedSearch->SearchValue = @$filter["x_NAMA_KAPAL"];
 		$this->NAMA_KAPAL->AdvancedSearch->SearchOperator = @$filter["z_NAMA_KAPAL"];
@@ -1002,14 +1034,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		$this->NAMA_KAPAL->AdvancedSearch->SearchValue2 = @$filter["y_NAMA_KAPAL"];
 		$this->NAMA_KAPAL->AdvancedSearch->SearchOperator2 = @$filter["w_NAMA_KAPAL"];
 		$this->NAMA_KAPAL->AdvancedSearch->save();
-
-		// Field MKPL_JENIS
-		$this->MKPL_JENIS->AdvancedSearch->SearchValue = @$filter["x_MKPL_JENIS"];
-		$this->MKPL_JENIS->AdvancedSearch->SearchOperator = @$filter["z_MKPL_JENIS"];
-		$this->MKPL_JENIS->AdvancedSearch->SearchCondition = @$filter["v_MKPL_JENIS"];
-		$this->MKPL_JENIS->AdvancedSearch->SearchValue2 = @$filter["y_MKPL_JENIS"];
-		$this->MKPL_JENIS->AdvancedSearch->SearchOperator2 = @$filter["w_MKPL_JENIS"];
-		$this->MKPL_JENIS->AdvancedSearch->save();
 
 		// Field GT_KAPAL
 		$this->GT_KAPAL->AdvancedSearch->SearchValue = @$filter["x_GT_KAPAL"];
@@ -1027,14 +1051,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		$this->LOA->AdvancedSearch->SearchOperator2 = @$filter["w_LOA"];
 		$this->LOA->AdvancedSearch->save();
 
-		// Field JASA
-		$this->JASA->AdvancedSearch->SearchValue = @$filter["x_JASA"];
-		$this->JASA->AdvancedSearch->SearchOperator = @$filter["z_JASA"];
-		$this->JASA->AdvancedSearch->SearchCondition = @$filter["v_JASA"];
-		$this->JASA->AdvancedSearch->SearchValue2 = @$filter["y_JASA"];
-		$this->JASA->AdvancedSearch->SearchOperator2 = @$filter["w_JASA"];
-		$this->JASA->AdvancedSearch->save();
-
 		// Field JENIS_GERAKAN
 		$this->JENIS_GERAKAN->AdvancedSearch->SearchValue = @$filter["x_JENIS_GERAKAN"];
 		$this->JENIS_GERAKAN->AdvancedSearch->SearchOperator = @$filter["z_JENIS_GERAKAN"];
@@ -1050,22 +1066,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		$this->BENDERA->AdvancedSearch->SearchValue2 = @$filter["y_BENDERA"];
 		$this->BENDERA->AdvancedSearch->SearchOperator2 = @$filter["w_BENDERA"];
 		$this->BENDERA->AdvancedSearch->save();
-
-		// Field TGL_MULAI_REA
-		$this->TGL_MULAI_REA->AdvancedSearch->SearchValue = @$filter["x_TGL_MULAI_REA"];
-		$this->TGL_MULAI_REA->AdvancedSearch->SearchOperator = @$filter["z_TGL_MULAI_REA"];
-		$this->TGL_MULAI_REA->AdvancedSearch->SearchCondition = @$filter["v_TGL_MULAI_REA"];
-		$this->TGL_MULAI_REA->AdvancedSearch->SearchValue2 = @$filter["y_TGL_MULAI_REA"];
-		$this->TGL_MULAI_REA->AdvancedSearch->SearchOperator2 = @$filter["w_TGL_MULAI_REA"];
-		$this->TGL_MULAI_REA->AdvancedSearch->save();
-
-		// Field TGL_SELESAI_REA
-		$this->TGL_SELESAI_REA->AdvancedSearch->SearchValue = @$filter["x_TGL_SELESAI_REA"];
-		$this->TGL_SELESAI_REA->AdvancedSearch->SearchOperator = @$filter["z_TGL_SELESAI_REA"];
-		$this->TGL_SELESAI_REA->AdvancedSearch->SearchCondition = @$filter["v_TGL_SELESAI_REA"];
-		$this->TGL_SELESAI_REA->AdvancedSearch->SearchValue2 = @$filter["y_TGL_SELESAI_REA"];
-		$this->TGL_SELESAI_REA->AdvancedSearch->SearchOperator2 = @$filter["w_TGL_SELESAI_REA"];
-		$this->TGL_SELESAI_REA->AdvancedSearch->save();
 
 		// Field LOKASI_AWAL
 		$this->LOKASI_AWAL->AdvancedSearch->SearchValue = @$filter["x_LOKASI_AWAL"];
@@ -1090,17 +1090,17 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		global $Security;
 		$where = "";
 		$this->buildSearchSql($where, $this->MA_PELB, $default, FALSE); // MA_PELB
-		$this->buildSearchSql($where, $this->NO_PPK1, $default, FALSE); // NO_PPK1
-		$this->buildSearchSql($where, $this->PERIODE, $default, FALSE); // PERIODE
-		$this->buildSearchSql($where, $this->NAMA_KAPAL, $default, FALSE); // NAMA_KAPAL
 		$this->buildSearchSql($where, $this->MKPL_JENIS, $default, FALSE); // MKPL_JENIS
-		$this->buildSearchSql($where, $this->GT_KAPAL, $default, FALSE); // GT_KAPAL
-		$this->buildSearchSql($where, $this->LOA, $default, FALSE); // LOA
 		$this->buildSearchSql($where, $this->JASA, $default, FALSE); // JASA
-		$this->buildSearchSql($where, $this->JENIS_GERAKAN, $default, FALSE); // JENIS_GERAKAN
-		$this->buildSearchSql($where, $this->BENDERA, $default, FALSE); // BENDERA
+		$this->buildSearchSql($where, $this->PERIODE, $default, FALSE); // PERIODE
 		$this->buildSearchSql($where, $this->TGL_MULAI_REA, $default, FALSE); // TGL_MULAI_REA
 		$this->buildSearchSql($where, $this->TGL_SELESAI_REA, $default, FALSE); // TGL_SELESAI_REA
+		$this->buildSearchSql($where, $this->NO_PPK1, $default, FALSE); // NO_PPK1
+		$this->buildSearchSql($where, $this->NAMA_KAPAL, $default, FALSE); // NAMA_KAPAL
+		$this->buildSearchSql($where, $this->GT_KAPAL, $default, FALSE); // GT_KAPAL
+		$this->buildSearchSql($where, $this->LOA, $default, FALSE); // LOA
+		$this->buildSearchSql($where, $this->JENIS_GERAKAN, $default, FALSE); // JENIS_GERAKAN
+		$this->buildSearchSql($where, $this->BENDERA, $default, FALSE); // BENDERA
 		$this->buildSearchSql($where, $this->LOKASI_AWAL, $default, FALSE); // LOKASI_AWAL
 		$this->buildSearchSql($where, $this->LOKASI_AKHIR, $default, FALSE); // LOKASI_AKHIR
 
@@ -1110,17 +1110,17 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		}
 		if (!$default && $this->Command == "search") {
 			$this->MA_PELB->AdvancedSearch->save(); // MA_PELB
-			$this->NO_PPK1->AdvancedSearch->save(); // NO_PPK1
-			$this->PERIODE->AdvancedSearch->save(); // PERIODE
-			$this->NAMA_KAPAL->AdvancedSearch->save(); // NAMA_KAPAL
 			$this->MKPL_JENIS->AdvancedSearch->save(); // MKPL_JENIS
-			$this->GT_KAPAL->AdvancedSearch->save(); // GT_KAPAL
-			$this->LOA->AdvancedSearch->save(); // LOA
 			$this->JASA->AdvancedSearch->save(); // JASA
-			$this->JENIS_GERAKAN->AdvancedSearch->save(); // JENIS_GERAKAN
-			$this->BENDERA->AdvancedSearch->save(); // BENDERA
+			$this->PERIODE->AdvancedSearch->save(); // PERIODE
 			$this->TGL_MULAI_REA->AdvancedSearch->save(); // TGL_MULAI_REA
 			$this->TGL_SELESAI_REA->AdvancedSearch->save(); // TGL_SELESAI_REA
+			$this->NO_PPK1->AdvancedSearch->save(); // NO_PPK1
+			$this->NAMA_KAPAL->AdvancedSearch->save(); // NAMA_KAPAL
+			$this->GT_KAPAL->AdvancedSearch->save(); // GT_KAPAL
+			$this->LOA->AdvancedSearch->save(); // LOA
+			$this->JENIS_GERAKAN->AdvancedSearch->save(); // JENIS_GERAKAN
+			$this->BENDERA->AdvancedSearch->save(); // BENDERA
 			$this->LOKASI_AWAL->AdvancedSearch->save(); // LOKASI_AWAL
 			$this->LOKASI_AKHIR->AdvancedSearch->save(); // LOKASI_AKHIR
 		}
@@ -1184,27 +1184,27 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 	{
 		if ($this->MA_PELB->AdvancedSearch->issetSession())
 			return TRUE;
-		if ($this->NO_PPK1->AdvancedSearch->issetSession())
+		if ($this->MKPL_JENIS->AdvancedSearch->issetSession())
+			return TRUE;
+		if ($this->JASA->AdvancedSearch->issetSession())
 			return TRUE;
 		if ($this->PERIODE->AdvancedSearch->issetSession())
 			return TRUE;
-		if ($this->NAMA_KAPAL->AdvancedSearch->issetSession())
+		if ($this->TGL_MULAI_REA->AdvancedSearch->issetSession())
 			return TRUE;
-		if ($this->MKPL_JENIS->AdvancedSearch->issetSession())
+		if ($this->TGL_SELESAI_REA->AdvancedSearch->issetSession())
+			return TRUE;
+		if ($this->NO_PPK1->AdvancedSearch->issetSession())
+			return TRUE;
+		if ($this->NAMA_KAPAL->AdvancedSearch->issetSession())
 			return TRUE;
 		if ($this->GT_KAPAL->AdvancedSearch->issetSession())
 			return TRUE;
 		if ($this->LOA->AdvancedSearch->issetSession())
 			return TRUE;
-		if ($this->JASA->AdvancedSearch->issetSession())
-			return TRUE;
 		if ($this->JENIS_GERAKAN->AdvancedSearch->issetSession())
 			return TRUE;
 		if ($this->BENDERA->AdvancedSearch->issetSession())
-			return TRUE;
-		if ($this->TGL_MULAI_REA->AdvancedSearch->issetSession())
-			return TRUE;
-		if ($this->TGL_SELESAI_REA->AdvancedSearch->issetSession())
 			return TRUE;
 		if ($this->LOKASI_AWAL->AdvancedSearch->issetSession())
 			return TRUE;
@@ -1235,17 +1235,17 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 	protected function resetAdvancedSearchParms()
 	{
 		$this->MA_PELB->AdvancedSearch->unsetSession();
-		$this->NO_PPK1->AdvancedSearch->unsetSession();
-		$this->PERIODE->AdvancedSearch->unsetSession();
-		$this->NAMA_KAPAL->AdvancedSearch->unsetSession();
 		$this->MKPL_JENIS->AdvancedSearch->unsetSession();
-		$this->GT_KAPAL->AdvancedSearch->unsetSession();
-		$this->LOA->AdvancedSearch->unsetSession();
 		$this->JASA->AdvancedSearch->unsetSession();
-		$this->JENIS_GERAKAN->AdvancedSearch->unsetSession();
-		$this->BENDERA->AdvancedSearch->unsetSession();
+		$this->PERIODE->AdvancedSearch->unsetSession();
 		$this->TGL_MULAI_REA->AdvancedSearch->unsetSession();
 		$this->TGL_SELESAI_REA->AdvancedSearch->unsetSession();
+		$this->NO_PPK1->AdvancedSearch->unsetSession();
+		$this->NAMA_KAPAL->AdvancedSearch->unsetSession();
+		$this->GT_KAPAL->AdvancedSearch->unsetSession();
+		$this->LOA->AdvancedSearch->unsetSession();
+		$this->JENIS_GERAKAN->AdvancedSearch->unsetSession();
+		$this->BENDERA->AdvancedSearch->unsetSession();
 		$this->LOKASI_AWAL->AdvancedSearch->unsetSession();
 		$this->LOKASI_AKHIR->AdvancedSearch->unsetSession();
 	}
@@ -1257,17 +1257,17 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 
 		// Restore advanced search values
 		$this->MA_PELB->AdvancedSearch->load();
-		$this->NO_PPK1->AdvancedSearch->load();
-		$this->PERIODE->AdvancedSearch->load();
-		$this->NAMA_KAPAL->AdvancedSearch->load();
 		$this->MKPL_JENIS->AdvancedSearch->load();
-		$this->GT_KAPAL->AdvancedSearch->load();
-		$this->LOA->AdvancedSearch->load();
 		$this->JASA->AdvancedSearch->load();
-		$this->JENIS_GERAKAN->AdvancedSearch->load();
-		$this->BENDERA->AdvancedSearch->load();
+		$this->PERIODE->AdvancedSearch->load();
 		$this->TGL_MULAI_REA->AdvancedSearch->load();
 		$this->TGL_SELESAI_REA->AdvancedSearch->load();
+		$this->NO_PPK1->AdvancedSearch->load();
+		$this->NAMA_KAPAL->AdvancedSearch->load();
+		$this->GT_KAPAL->AdvancedSearch->load();
+		$this->LOA->AdvancedSearch->load();
+		$this->JENIS_GERAKAN->AdvancedSearch->load();
+		$this->BENDERA->AdvancedSearch->load();
 		$this->LOKASI_AWAL->AdvancedSearch->load();
 		$this->LOKASI_AKHIR->AdvancedSearch->load();
 	}
@@ -1281,19 +1281,11 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			$this->CurrentOrder = Get("order");
 			$this->CurrentOrderType = Get("ordertype", "");
 			$this->updateSort($this->MA_PELB); // MA_PELB
-			$this->updateSort($this->NO_PPK1); // NO_PPK1
-			$this->updateSort($this->PERIODE); // PERIODE
-			$this->updateSort($this->NAMA_KAPAL); // NAMA_KAPAL
 			$this->updateSort($this->MKPL_JENIS); // MKPL_JENIS
-			$this->updateSort($this->GT_KAPAL); // GT_KAPAL
-			$this->updateSort($this->LOA); // LOA
 			$this->updateSort($this->JASA); // JASA
-			$this->updateSort($this->JENIS_GERAKAN); // JENIS_GERAKAN
-			$this->updateSort($this->BENDERA); // BENDERA
+			$this->updateSort($this->PERIODE); // PERIODE
 			$this->updateSort($this->TGL_MULAI_REA); // TGL_MULAI_REA
 			$this->updateSort($this->TGL_SELESAI_REA); // TGL_SELESAI_REA
-			$this->updateSort($this->LOKASI_AWAL); // LOKASI_AWAL
-			$this->updateSort($this->LOKASI_AKHIR); // LOKASI_AKHIR
 			$this->setStartRecordNumber(1); // Reset start position
 		}
 	}
@@ -1330,19 +1322,11 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 				$orderBy = "";
 				$this->setSessionOrderBy($orderBy);
 				$this->MA_PELB->setSort("");
-				$this->NO_PPK1->setSort("");
-				$this->PERIODE->setSort("");
-				$this->NAMA_KAPAL->setSort("");
 				$this->MKPL_JENIS->setSort("");
-				$this->GT_KAPAL->setSort("");
-				$this->LOA->setSort("");
 				$this->JASA->setSort("");
-				$this->JENIS_GERAKAN->setSort("");
-				$this->BENDERA->setSort("");
+				$this->PERIODE->setSort("");
 				$this->TGL_MULAI_REA->setSort("");
 				$this->TGL_SELESAI_REA->setSort("");
-				$this->LOKASI_AWAL->setSort("");
-				$this->LOKASI_AKHIR->setSort("");
 			}
 
 			// Reset start position
@@ -1680,12 +1664,19 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			$this->Command = "search";
 		$this->MA_PELB->AdvancedSearch->setSearchOperator(Get("z_MA_PELB", ""));
 
-		// NO_PPK1
+		// MKPL_JENIS
 		if (!$this->isAddOrEdit())
-			$this->NO_PPK1->AdvancedSearch->setSearchValue(Get("x_NO_PPK1", Get("NO_PPK1", "")));
-		if ($this->NO_PPK1->AdvancedSearch->SearchValue <> "" && $this->Command == "")
+			$this->MKPL_JENIS->AdvancedSearch->setSearchValue(Get("x_MKPL_JENIS", Get("MKPL_JENIS", "")));
+		if ($this->MKPL_JENIS->AdvancedSearch->SearchValue <> "" && $this->Command == "")
 			$this->Command = "search";
-		$this->NO_PPK1->AdvancedSearch->setSearchOperator(Get("z_NO_PPK1", ""));
+		$this->MKPL_JENIS->AdvancedSearch->setSearchOperator(Get("z_MKPL_JENIS", ""));
+
+		// JASA
+		if (!$this->isAddOrEdit())
+			$this->JASA->AdvancedSearch->setSearchValue(Get("x_JASA", Get("JASA", "")));
+		if ($this->JASA->AdvancedSearch->SearchValue <> "" && $this->Command == "")
+			$this->Command = "search";
+		$this->JASA->AdvancedSearch->setSearchOperator(Get("z_JASA", ""));
 
 		// PERIODE
 		if (!$this->isAddOrEdit())
@@ -1694,19 +1685,33 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			$this->Command = "search";
 		$this->PERIODE->AdvancedSearch->setSearchOperator(Get("z_PERIODE", ""));
 
+		// TGL_MULAI_REA
+		if (!$this->isAddOrEdit())
+			$this->TGL_MULAI_REA->AdvancedSearch->setSearchValue(Get("x_TGL_MULAI_REA", Get("TGL_MULAI_REA", "")));
+		if ($this->TGL_MULAI_REA->AdvancedSearch->SearchValue <> "" && $this->Command == "")
+			$this->Command = "search";
+		$this->TGL_MULAI_REA->AdvancedSearch->setSearchOperator(Get("z_TGL_MULAI_REA", ""));
+
+		// TGL_SELESAI_REA
+		if (!$this->isAddOrEdit())
+			$this->TGL_SELESAI_REA->AdvancedSearch->setSearchValue(Get("x_TGL_SELESAI_REA", Get("TGL_SELESAI_REA", "")));
+		if ($this->TGL_SELESAI_REA->AdvancedSearch->SearchValue <> "" && $this->Command == "")
+			$this->Command = "search";
+		$this->TGL_SELESAI_REA->AdvancedSearch->setSearchOperator(Get("z_TGL_SELESAI_REA", ""));
+
+		// NO_PPK1
+		if (!$this->isAddOrEdit())
+			$this->NO_PPK1->AdvancedSearch->setSearchValue(Get("x_NO_PPK1", Get("NO_PPK1", "")));
+		if ($this->NO_PPK1->AdvancedSearch->SearchValue <> "" && $this->Command == "")
+			$this->Command = "search";
+		$this->NO_PPK1->AdvancedSearch->setSearchOperator(Get("z_NO_PPK1", ""));
+
 		// NAMA_KAPAL
 		if (!$this->isAddOrEdit())
 			$this->NAMA_KAPAL->AdvancedSearch->setSearchValue(Get("x_NAMA_KAPAL", Get("NAMA_KAPAL", "")));
 		if ($this->NAMA_KAPAL->AdvancedSearch->SearchValue <> "" && $this->Command == "")
 			$this->Command = "search";
 		$this->NAMA_KAPAL->AdvancedSearch->setSearchOperator(Get("z_NAMA_KAPAL", ""));
-
-		// MKPL_JENIS
-		if (!$this->isAddOrEdit())
-			$this->MKPL_JENIS->AdvancedSearch->setSearchValue(Get("x_MKPL_JENIS", Get("MKPL_JENIS", "")));
-		if ($this->MKPL_JENIS->AdvancedSearch->SearchValue <> "" && $this->Command == "")
-			$this->Command = "search";
-		$this->MKPL_JENIS->AdvancedSearch->setSearchOperator(Get("z_MKPL_JENIS", ""));
 
 		// GT_KAPAL
 		if (!$this->isAddOrEdit())
@@ -1722,13 +1727,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			$this->Command = "search";
 		$this->LOA->AdvancedSearch->setSearchOperator(Get("z_LOA", ""));
 
-		// JASA
-		if (!$this->isAddOrEdit())
-			$this->JASA->AdvancedSearch->setSearchValue(Get("x_JASA", Get("JASA", "")));
-		if ($this->JASA->AdvancedSearch->SearchValue <> "" && $this->Command == "")
-			$this->Command = "search";
-		$this->JASA->AdvancedSearch->setSearchOperator(Get("z_JASA", ""));
-
 		// JENIS_GERAKAN
 		if (!$this->isAddOrEdit())
 			$this->JENIS_GERAKAN->AdvancedSearch->setSearchValue(Get("x_JENIS_GERAKAN", Get("JENIS_GERAKAN", "")));
@@ -1742,20 +1740,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		if ($this->BENDERA->AdvancedSearch->SearchValue <> "" && $this->Command == "")
 			$this->Command = "search";
 		$this->BENDERA->AdvancedSearch->setSearchOperator(Get("z_BENDERA", ""));
-
-		// TGL_MULAI_REA
-		if (!$this->isAddOrEdit())
-			$this->TGL_MULAI_REA->AdvancedSearch->setSearchValue(Get("x_TGL_MULAI_REA", Get("TGL_MULAI_REA", "")));
-		if ($this->TGL_MULAI_REA->AdvancedSearch->SearchValue <> "" && $this->Command == "")
-			$this->Command = "search";
-		$this->TGL_MULAI_REA->AdvancedSearch->setSearchOperator(Get("z_TGL_MULAI_REA", ""));
-
-		// TGL_SELESAI_REA
-		if (!$this->isAddOrEdit())
-			$this->TGL_SELESAI_REA->AdvancedSearch->setSearchValue(Get("x_TGL_SELESAI_REA", Get("TGL_SELESAI_REA", "")));
-		if ($this->TGL_SELESAI_REA->AdvancedSearch->SearchValue <> "" && $this->Command == "")
-			$this->Command = "search";
-		$this->TGL_SELESAI_REA->AdvancedSearch->setSearchOperator(Get("z_TGL_SELESAI_REA", ""));
 
 		// LOKASI_AWAL
 		if (!$this->isAddOrEdit())
@@ -1835,17 +1819,17 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		if (!$rs || $rs->EOF)
 			return;
 		$this->MA_PELB->setDbValue($row['MA_PELB']);
-		$this->NO_PPK1->setDbValue($row['NO_PPK1']);
-		$this->PERIODE->setDbValue($row['PERIODE']);
-		$this->NAMA_KAPAL->setDbValue($row['NAMA_KAPAL']);
 		$this->MKPL_JENIS->setDbValue($row['MKPL_JENIS']);
-		$this->GT_KAPAL->setDbValue($row['GT_KAPAL']);
-		$this->LOA->setDbValue($row['LOA']);
 		$this->JASA->setDbValue($row['JASA']);
-		$this->JENIS_GERAKAN->setDbValue($row['JENIS_GERAKAN']);
-		$this->BENDERA->setDbValue($row['BENDERA']);
+		$this->PERIODE->setDbValue($row['PERIODE']);
 		$this->TGL_MULAI_REA->setDbValue($row['TGL_MULAI_REA']);
 		$this->TGL_SELESAI_REA->setDbValue($row['TGL_SELESAI_REA']);
+		$this->NO_PPK1->setDbValue($row['NO_PPK1']);
+		$this->NAMA_KAPAL->setDbValue($row['NAMA_KAPAL']);
+		$this->GT_KAPAL->setDbValue($row['GT_KAPAL']);
+		$this->LOA->setDbValue($row['LOA']);
+		$this->JENIS_GERAKAN->setDbValue($row['JENIS_GERAKAN']);
+		$this->BENDERA->setDbValue($row['BENDERA']);
 		$this->LOKASI_AWAL->setDbValue($row['LOKASI_AWAL']);
 		$this->LOKASI_AKHIR->setDbValue($row['LOKASI_AKHIR']);
 	}
@@ -1855,17 +1839,17 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 	{
 		$row = [];
 		$row['MA_PELB'] = NULL;
-		$row['NO_PPK1'] = NULL;
-		$row['PERIODE'] = NULL;
-		$row['NAMA_KAPAL'] = NULL;
 		$row['MKPL_JENIS'] = NULL;
-		$row['GT_KAPAL'] = NULL;
-		$row['LOA'] = NULL;
 		$row['JASA'] = NULL;
-		$row['JENIS_GERAKAN'] = NULL;
-		$row['BENDERA'] = NULL;
+		$row['PERIODE'] = NULL;
 		$row['TGL_MULAI_REA'] = NULL;
 		$row['TGL_SELESAI_REA'] = NULL;
+		$row['NO_PPK1'] = NULL;
+		$row['NAMA_KAPAL'] = NULL;
+		$row['GT_KAPAL'] = NULL;
+		$row['LOA'] = NULL;
+		$row['JENIS_GERAKAN'] = NULL;
+		$row['BENDERA'] = NULL;
 		$row['LOKASI_AWAL'] = NULL;
 		$row['LOKASI_AKHIR'] = NULL;
 		return $row;
@@ -1890,26 +1874,22 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 		$this->InlineCopyUrl = $this->getInlineCopyUrl();
 		$this->DeleteUrl = $this->getDeleteUrl();
 
-		// Convert decimal values if posted back
-		if ($this->LOA->FormValue == $this->LOA->CurrentValue && is_numeric(ConvertToFloatString($this->LOA->CurrentValue)))
-			$this->LOA->CurrentValue = ConvertToFloatString($this->LOA->CurrentValue);
-
 		// Call Row_Rendering event
 		$this->Row_Rendering();
 
 		// Common render codes for all row types
 		// MA_PELB
-		// NO_PPK1
-		// PERIODE
-		// NAMA_KAPAL
 		// MKPL_JENIS
-		// GT_KAPAL
-		// LOA
 		// JASA
-		// JENIS_GERAKAN
-		// BENDERA
+		// PERIODE
 		// TGL_MULAI_REA
 		// TGL_SELESAI_REA
+		// NO_PPK1
+		// NAMA_KAPAL
+		// GT_KAPAL
+		// LOA
+		// JENIS_GERAKAN
+		// BENDERA
 		// LOKASI_AWAL
 		// LOKASI_AKHIR
 
@@ -1920,7 +1900,7 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			if ($curVal <> "") {
 				$this->MA_PELB->ViewValue = $this->MA_PELB->lookupCacheOption($curVal);
 				if ($this->MA_PELB->ViewValue === NULL) { // Lookup from database
-					$filterWrk = "`pelabuhan`" . SearchString("=", $curVal, DATATYPE_STRING, "");
+					$filterWrk = "`ma_pelb`" . SearchString("=", $curVal, DATATYPE_STRING, "");
 					$sqlWrk = $this->MA_PELB->Lookup->getSql(FALSE, $filterWrk, '', $this);
 					$rswrk = Conn()->execute($sqlWrk);
 					if ($rswrk && !$rswrk->EOF) { // Lookup values found
@@ -1937,10 +1917,31 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			}
 			$this->MA_PELB->ViewCustomAttributes = "";
 
-			// NO_PPK1
-			$this->NO_PPK1->ViewValue = $this->NO_PPK1->CurrentValue;
-			$this->NO_PPK1->ViewValue = FormatNumber($this->NO_PPK1->ViewValue, 0, -2, -2, -2);
-			$this->NO_PPK1->ViewCustomAttributes = "";
+			// MKPL_JENIS
+			$this->MKPL_JENIS->ViewValue = $this->MKPL_JENIS->CurrentValue;
+			$this->MKPL_JENIS->ViewCustomAttributes = "";
+
+			// JASA
+			$curVal = strval($this->JASA->CurrentValue);
+			if ($curVal <> "") {
+				$this->JASA->ViewValue = $this->JASA->lookupCacheOption($curVal);
+				if ($this->JASA->ViewValue === NULL) { // Lookup from database
+					$filterWrk = "`jasa`" . SearchString("=", $curVal, DATATYPE_STRING, "");
+					$sqlWrk = $this->JASA->Lookup->getSql(FALSE, $filterWrk, '', $this);
+					$rswrk = Conn()->execute($sqlWrk);
+					if ($rswrk && !$rswrk->EOF) { // Lookup values found
+						$arwrk = array();
+						$arwrk[1] = $rswrk->fields('df');
+						$this->JASA->ViewValue = $this->JASA->displayValue($arwrk);
+						$rswrk->Close();
+					} else {
+						$this->JASA->ViewValue = $this->JASA->CurrentValue;
+					}
+				}
+			} else {
+				$this->JASA->ViewValue = NULL;
+			}
+			$this->JASA->ViewCustomAttributes = "";
 
 			// PERIODE
 			$curVal = strval($this->PERIODE->CurrentValue);
@@ -1965,15 +1966,26 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			}
 			$this->PERIODE->ViewCustomAttributes = "";
 
+			// TGL_MULAI_REA
+			$this->TGL_MULAI_REA->ViewValue = $this->TGL_MULAI_REA->CurrentValue;
+			$this->TGL_MULAI_REA->ViewValue = FormatDateTime($this->TGL_MULAI_REA->ViewValue, 111);
+			$this->TGL_MULAI_REA->ViewCustomAttributes = "";
+
+			// TGL_SELESAI_REA
+			$this->TGL_SELESAI_REA->ViewValue = $this->TGL_SELESAI_REA->CurrentValue;
+			$this->TGL_SELESAI_REA->ViewValue = FormatDateTime($this->TGL_SELESAI_REA->ViewValue, 111);
+			$this->TGL_SELESAI_REA->ViewCustomAttributes = "";
+
+			// NO_PPK1
+			$this->NO_PPK1->ViewValue = $this->NO_PPK1->CurrentValue;
+			$this->NO_PPK1->ViewValue = FormatNumber($this->NO_PPK1->ViewValue, 0, -2, -2, -2);
+			$this->NO_PPK1->ViewCustomAttributes = "";
+
 			// NAMA_KAPAL
 			$arwrk = array();
 			$arwrk[1] = $this->NAMA_KAPAL->CurrentValue;
 			$this->NAMA_KAPAL->ViewValue = $this->NAMA_KAPAL->displayValue($arwrk);
 			$this->NAMA_KAPAL->ViewCustomAttributes = "";
-
-			// MKPL_JENIS
-			$this->MKPL_JENIS->ViewValue = $this->MKPL_JENIS->CurrentValue;
-			$this->MKPL_JENIS->ViewCustomAttributes = "";
 
 			// GT_KAPAL
 			$this->GT_KAPAL->ViewValue = $this->GT_KAPAL->CurrentValue;
@@ -1985,28 +1997,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			$this->LOA->ViewValue = FormatNumber($this->LOA->ViewValue, 2, -2, -2, -2);
 			$this->LOA->ViewCustomAttributes = "";
 
-			// JASA
-			$curVal = strval($this->JASA->CurrentValue);
-			if ($curVal <> "") {
-				$this->JASA->ViewValue = $this->JASA->lookupCacheOption($curVal);
-				if ($this->JASA->ViewValue === NULL) { // Lookup from database
-					$filterWrk = "`jasa`" . SearchString("=", $curVal, DATATYPE_STRING, "");
-					$sqlWrk = $this->JASA->Lookup->getSql(FALSE, $filterWrk, '', $this);
-					$rswrk = Conn()->execute($sqlWrk);
-					if ($rswrk && !$rswrk->EOF) { // Lookup values found
-						$arwrk = array();
-						$arwrk[1] = $rswrk->fields('df');
-						$this->JASA->ViewValue = $this->JASA->displayValue($arwrk);
-						$rswrk->Close();
-					} else {
-						$this->JASA->ViewValue = $this->JASA->CurrentValue;
-					}
-				}
-			} else {
-				$this->JASA->ViewValue = NULL;
-			}
-			$this->JASA->ViewCustomAttributes = "";
-
 			// JENIS_GERAKAN
 			$this->JENIS_GERAKAN->ViewValue = $this->JENIS_GERAKAN->CurrentValue;
 			$this->JENIS_GERAKAN->ViewCustomAttributes = "";
@@ -2014,14 +2004,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			// BENDERA
 			$this->BENDERA->ViewValue = $this->BENDERA->CurrentValue;
 			$this->BENDERA->ViewCustomAttributes = "";
-
-			// TGL_MULAI_REA
-			$this->TGL_MULAI_REA->ViewValue = $this->TGL_MULAI_REA->CurrentValue;
-			$this->TGL_MULAI_REA->ViewCustomAttributes = "";
-
-			// TGL_SELESAI_REA
-			$this->TGL_SELESAI_REA->ViewValue = $this->TGL_SELESAI_REA->CurrentValue;
-			$this->TGL_SELESAI_REA->ViewCustomAttributes = "";
 
 			// LOKASI_AWAL
 			$this->LOKASI_AWAL->ViewValue = $this->LOKASI_AWAL->CurrentValue;
@@ -2036,50 +2018,20 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			$this->MA_PELB->HrefValue = "";
 			$this->MA_PELB->TooltipValue = "";
 
-			// NO_PPK1
-			$this->NO_PPK1->LinkCustomAttributes = "";
-			$this->NO_PPK1->HrefValue = "";
-			$this->NO_PPK1->TooltipValue = "";
-
-			// PERIODE
-			$this->PERIODE->LinkCustomAttributes = "";
-			$this->PERIODE->HrefValue = "";
-			$this->PERIODE->TooltipValue = "";
-
-			// NAMA_KAPAL
-			$this->NAMA_KAPAL->LinkCustomAttributes = "";
-			$this->NAMA_KAPAL->HrefValue = "";
-			$this->NAMA_KAPAL->TooltipValue = "";
-
 			// MKPL_JENIS
 			$this->MKPL_JENIS->LinkCustomAttributes = "";
 			$this->MKPL_JENIS->HrefValue = "";
 			$this->MKPL_JENIS->TooltipValue = "";
-
-			// GT_KAPAL
-			$this->GT_KAPAL->LinkCustomAttributes = "";
-			$this->GT_KAPAL->HrefValue = "";
-			$this->GT_KAPAL->TooltipValue = "";
-
-			// LOA
-			$this->LOA->LinkCustomAttributes = "";
-			$this->LOA->HrefValue = "";
-			$this->LOA->TooltipValue = "";
 
 			// JASA
 			$this->JASA->LinkCustomAttributes = "";
 			$this->JASA->HrefValue = "";
 			$this->JASA->TooltipValue = "";
 
-			// JENIS_GERAKAN
-			$this->JENIS_GERAKAN->LinkCustomAttributes = "";
-			$this->JENIS_GERAKAN->HrefValue = "";
-			$this->JENIS_GERAKAN->TooltipValue = "";
-
-			// BENDERA
-			$this->BENDERA->LinkCustomAttributes = "";
-			$this->BENDERA->HrefValue = "";
-			$this->BENDERA->TooltipValue = "";
+			// PERIODE
+			$this->PERIODE->LinkCustomAttributes = "";
+			$this->PERIODE->HrefValue = "";
+			$this->PERIODE->TooltipValue = "";
 
 			// TGL_MULAI_REA
 			$this->TGL_MULAI_REA->LinkCustomAttributes = "";
@@ -2090,16 +2042,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 			$this->TGL_SELESAI_REA->LinkCustomAttributes = "";
 			$this->TGL_SELESAI_REA->HrefValue = "";
 			$this->TGL_SELESAI_REA->TooltipValue = "";
-
-			// LOKASI_AWAL
-			$this->LOKASI_AWAL->LinkCustomAttributes = "";
-			$this->LOKASI_AWAL->HrefValue = "";
-			$this->LOKASI_AWAL->TooltipValue = "";
-
-			// LOKASI_AKHIR
-			$this->LOKASI_AKHIR->LinkCustomAttributes = "";
-			$this->LOKASI_AKHIR->HrefValue = "";
-			$this->LOKASI_AKHIR->TooltipValue = "";
 		} elseif ($this->RowType == ROWTYPE_SEARCH) { // Search row
 
 			// MA_PELB
@@ -2116,7 +2058,7 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 				if ($curVal == "") {
 					$filterWrk = "0=1";
 				} else {
-					$filterWrk = "`pelabuhan`" . SearchString("=", $this->MA_PELB->AdvancedSearch->SearchValue, DATATYPE_STRING, "");
+					$filterWrk = "`ma_pelb`" . SearchString("=", $this->MA_PELB->AdvancedSearch->SearchValue, DATATYPE_STRING, "");
 				}
 				$sqlWrk = $this->MA_PELB->Lookup->getSql(TRUE, $filterWrk, '', $this);
 				$rswrk = Conn()->execute($sqlWrk);
@@ -2125,39 +2067,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 				$this->MA_PELB->EditValue = $arwrk;
 			}
 
-			// NO_PPK1
-			$this->NO_PPK1->EditAttrs["class"] = "form-control";
-			$this->NO_PPK1->EditCustomAttributes = "";
-			$this->NO_PPK1->EditValue = HtmlEncode($this->NO_PPK1->AdvancedSearch->SearchValue);
-			$this->NO_PPK1->PlaceHolder = RemoveHtml($this->NO_PPK1->caption());
-
-			// PERIODE
-			$this->PERIODE->EditAttrs["class"] = "form-control";
-			$this->PERIODE->EditCustomAttributes = "";
-			$curVal = trim(strval($this->PERIODE->AdvancedSearch->SearchValue));
-			if ($curVal <> "")
-				$this->PERIODE->AdvancedSearch->ViewValue = $this->PERIODE->lookupCacheOption($curVal);
-			else
-				$this->PERIODE->AdvancedSearch->ViewValue = $this->PERIODE->Lookup !== NULL && is_array($this->PERIODE->Lookup->Options) ? $curVal : NULL;
-			if ($this->PERIODE->AdvancedSearch->ViewValue !== NULL) { // Load from cache
-				$this->PERIODE->EditValue = array_values($this->PERIODE->Lookup->Options);
-			} else { // Lookup from database
-				if ($curVal == "") {
-					$filterWrk = "0=1";
-				} else {
-					$filterWrk = "`periode`" . SearchString("=", $this->PERIODE->AdvancedSearch->SearchValue, DATATYPE_NUMBER, "");
-				}
-				$sqlWrk = $this->PERIODE->Lookup->getSql(TRUE, $filterWrk, '', $this);
-				$rswrk = Conn()->execute($sqlWrk);
-				$arwrk = ($rswrk) ? $rswrk->GetRows() : array();
-				if ($rswrk) $rswrk->Close();
-				$this->PERIODE->EditValue = $arwrk;
-			}
-
-			// NAMA_KAPAL
-			$this->NAMA_KAPAL->EditAttrs["class"] = "form-control";
-			$this->NAMA_KAPAL->EditCustomAttributes = "";
-
 			// MKPL_JENIS
 			$this->MKPL_JENIS->EditAttrs["class"] = "form-control";
 			$this->MKPL_JENIS->EditCustomAttributes = "";
@@ -2165,18 +2074,6 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 				$this->MKPL_JENIS->AdvancedSearch->SearchValue = HtmlDecode($this->MKPL_JENIS->AdvancedSearch->SearchValue);
 			$this->MKPL_JENIS->EditValue = HtmlEncode($this->MKPL_JENIS->AdvancedSearch->SearchValue);
 			$this->MKPL_JENIS->PlaceHolder = RemoveHtml($this->MKPL_JENIS->caption());
-
-			// GT_KAPAL
-			$this->GT_KAPAL->EditAttrs["class"] = "form-control";
-			$this->GT_KAPAL->EditCustomAttributes = "";
-			$this->GT_KAPAL->EditValue = HtmlEncode($this->GT_KAPAL->AdvancedSearch->SearchValue);
-			$this->GT_KAPAL->PlaceHolder = RemoveHtml($this->GT_KAPAL->caption());
-
-			// LOA
-			$this->LOA->EditAttrs["class"] = "form-control";
-			$this->LOA->EditCustomAttributes = "";
-			$this->LOA->EditValue = HtmlEncode($this->LOA->AdvancedSearch->SearchValue);
-			$this->LOA->PlaceHolder = RemoveHtml($this->LOA->caption());
 
 			// JASA
 			$this->JASA->EditAttrs["class"] = "form-control";
@@ -2201,53 +2098,40 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 				$this->JASA->EditValue = $arwrk;
 			}
 
-			// JENIS_GERAKAN
-			$this->JENIS_GERAKAN->EditAttrs["class"] = "form-control";
-			$this->JENIS_GERAKAN->EditCustomAttributes = "";
-			if (REMOVE_XSS)
-				$this->JENIS_GERAKAN->AdvancedSearch->SearchValue = HtmlDecode($this->JENIS_GERAKAN->AdvancedSearch->SearchValue);
-			$this->JENIS_GERAKAN->EditValue = HtmlEncode($this->JENIS_GERAKAN->AdvancedSearch->SearchValue);
-			$this->JENIS_GERAKAN->PlaceHolder = RemoveHtml($this->JENIS_GERAKAN->caption());
-
-			// BENDERA
-			$this->BENDERA->EditAttrs["class"] = "form-control";
-			$this->BENDERA->EditCustomAttributes = "";
-			if (REMOVE_XSS)
-				$this->BENDERA->AdvancedSearch->SearchValue = HtmlDecode($this->BENDERA->AdvancedSearch->SearchValue);
-			$this->BENDERA->EditValue = HtmlEncode($this->BENDERA->AdvancedSearch->SearchValue);
-			$this->BENDERA->PlaceHolder = RemoveHtml($this->BENDERA->caption());
+			// PERIODE
+			$this->PERIODE->EditAttrs["class"] = "form-control";
+			$this->PERIODE->EditCustomAttributes = "";
+			$curVal = trim(strval($this->PERIODE->AdvancedSearch->SearchValue));
+			if ($curVal <> "")
+				$this->PERIODE->AdvancedSearch->ViewValue = $this->PERIODE->lookupCacheOption($curVal);
+			else
+				$this->PERIODE->AdvancedSearch->ViewValue = $this->PERIODE->Lookup !== NULL && is_array($this->PERIODE->Lookup->Options) ? $curVal : NULL;
+			if ($this->PERIODE->AdvancedSearch->ViewValue !== NULL) { // Load from cache
+				$this->PERIODE->EditValue = array_values($this->PERIODE->Lookup->Options);
+			} else { // Lookup from database
+				if ($curVal == "") {
+					$filterWrk = "0=1";
+				} else {
+					$filterWrk = "`periode`" . SearchString("=", $this->PERIODE->AdvancedSearch->SearchValue, DATATYPE_NUMBER, "");
+				}
+				$sqlWrk = $this->PERIODE->Lookup->getSql(TRUE, $filterWrk, '', $this);
+				$rswrk = Conn()->execute($sqlWrk);
+				$arwrk = ($rswrk) ? $rswrk->GetRows() : array();
+				if ($rswrk) $rswrk->Close();
+				$this->PERIODE->EditValue = $arwrk;
+			}
 
 			// TGL_MULAI_REA
 			$this->TGL_MULAI_REA->EditAttrs["class"] = "form-control";
 			$this->TGL_MULAI_REA->EditCustomAttributes = "";
-			if (REMOVE_XSS)
-				$this->TGL_MULAI_REA->AdvancedSearch->SearchValue = HtmlDecode($this->TGL_MULAI_REA->AdvancedSearch->SearchValue);
-			$this->TGL_MULAI_REA->EditValue = HtmlEncode($this->TGL_MULAI_REA->AdvancedSearch->SearchValue);
+			$this->TGL_MULAI_REA->EditValue = HtmlEncode(FormatDateTime(UnFormatDateTime($this->TGL_MULAI_REA->AdvancedSearch->SearchValue, 111), 111));
 			$this->TGL_MULAI_REA->PlaceHolder = RemoveHtml($this->TGL_MULAI_REA->caption());
 
 			// TGL_SELESAI_REA
 			$this->TGL_SELESAI_REA->EditAttrs["class"] = "form-control";
 			$this->TGL_SELESAI_REA->EditCustomAttributes = "";
-			if (REMOVE_XSS)
-				$this->TGL_SELESAI_REA->AdvancedSearch->SearchValue = HtmlDecode($this->TGL_SELESAI_REA->AdvancedSearch->SearchValue);
-			$this->TGL_SELESAI_REA->EditValue = HtmlEncode($this->TGL_SELESAI_REA->AdvancedSearch->SearchValue);
+			$this->TGL_SELESAI_REA->EditValue = HtmlEncode(FormatDateTime(UnFormatDateTime($this->TGL_SELESAI_REA->AdvancedSearch->SearchValue, 111), 111));
 			$this->TGL_SELESAI_REA->PlaceHolder = RemoveHtml($this->TGL_SELESAI_REA->caption());
-
-			// LOKASI_AWAL
-			$this->LOKASI_AWAL->EditAttrs["class"] = "form-control";
-			$this->LOKASI_AWAL->EditCustomAttributes = "";
-			if (REMOVE_XSS)
-				$this->LOKASI_AWAL->AdvancedSearch->SearchValue = HtmlDecode($this->LOKASI_AWAL->AdvancedSearch->SearchValue);
-			$this->LOKASI_AWAL->EditValue = HtmlEncode($this->LOKASI_AWAL->AdvancedSearch->SearchValue);
-			$this->LOKASI_AWAL->PlaceHolder = RemoveHtml($this->LOKASI_AWAL->caption());
-
-			// LOKASI_AKHIR
-			$this->LOKASI_AKHIR->EditAttrs["class"] = "form-control";
-			$this->LOKASI_AKHIR->EditCustomAttributes = "";
-			if (REMOVE_XSS)
-				$this->LOKASI_AKHIR->AdvancedSearch->SearchValue = HtmlDecode($this->LOKASI_AKHIR->AdvancedSearch->SearchValue);
-			$this->LOKASI_AKHIR->EditValue = HtmlEncode($this->LOKASI_AKHIR->AdvancedSearch->SearchValue);
-			$this->LOKASI_AKHIR->PlaceHolder = RemoveHtml($this->LOKASI_AKHIR->caption());
 		}
 		if ($this->RowType == ROWTYPE_ADD || $this->RowType == ROWTYPE_EDIT || $this->RowType == ROWTYPE_SEARCH) // Add/Edit/Search row
 			$this->setupFieldTitles();
@@ -2285,17 +2169,17 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 	public function loadAdvancedSearch()
 	{
 		$this->MA_PELB->AdvancedSearch->load();
-		$this->NO_PPK1->AdvancedSearch->load();
-		$this->PERIODE->AdvancedSearch->load();
-		$this->NAMA_KAPAL->AdvancedSearch->load();
 		$this->MKPL_JENIS->AdvancedSearch->load();
-		$this->GT_KAPAL->AdvancedSearch->load();
-		$this->LOA->AdvancedSearch->load();
 		$this->JASA->AdvancedSearch->load();
-		$this->JENIS_GERAKAN->AdvancedSearch->load();
-		$this->BENDERA->AdvancedSearch->load();
+		$this->PERIODE->AdvancedSearch->load();
 		$this->TGL_MULAI_REA->AdvancedSearch->load();
 		$this->TGL_SELESAI_REA->AdvancedSearch->load();
+		$this->NO_PPK1->AdvancedSearch->load();
+		$this->NAMA_KAPAL->AdvancedSearch->load();
+		$this->GT_KAPAL->AdvancedSearch->load();
+		$this->LOA->AdvancedSearch->load();
+		$this->JENIS_GERAKAN->AdvancedSearch->load();
+		$this->BENDERA->AdvancedSearch->load();
 		$this->LOKASI_AWAL->AdvancedSearch->load();
 		$this->LOKASI_AKHIR->AdvancedSearch->load();
 	}
@@ -2343,11 +2227,11 @@ class kapal_all_20162018_vasa_list extends kapal_all_20162018_vasa
 					switch ($fld->FieldVar) {
 						case "x_MA_PELB":
 							break;
+						case "x_JASA":
+							break;
 						case "x_PERIODE":
 							break;
 						case "x_NAMA_KAPAL":
-							break;
-						case "x_JASA":
 							break;
 					}
 					$ar[strval($row[0])] = $row;

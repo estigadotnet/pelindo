@@ -4,7 +4,7 @@
  * PHPMaker Common classes and functions
  * (C) 2002-2019 e.World Technology Limited. All rights reserved.
 */
-namespace PHPMaker2019\project1;
+namespace PHPMaker2019\pelindo_prj;
 
 /**
  * Get request object
@@ -333,7 +333,7 @@ function CurrentLanguageID() {
 function CurrentProjectID() {
 	if (isset($GLOBALS["Page"]))
 		return $GLOBALS["Page"]->ProjectID;
-	return "{C44F9D66-099F-4CF9-9DCC-1FF3E612E32E}";
+	return "{4C62D2CC-E7E3-42AE-8875-EDB884DF627D}";
 }
 
 /**

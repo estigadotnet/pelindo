@@ -1,5 +1,5 @@
 <?php
-namespace PHPMaker2019\project1;
+namespace PHPMaker2019\pelindo_prj;
 
 // Set up relative path
 $RELATIVE_PATH = "../";

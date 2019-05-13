@@ -2,9 +2,9 @@
 namespace PHPMaker2019\pelindo_prj;
 
 /**
- * Table class for v0001_periode
+ * Table class for v0002_pelabuhan
  */
-class v0001_periode extends DbTable
+class v0002_pelabuhan extends DbTable
 {
 	protected $SqlFrom = "";
 	protected $SqlSelect = "";
@@ -25,9 +25,7 @@ class v0001_periode extends DbTable
 	public $ExportDoc;
 
 	// Fields
-	public $periode;
-	public $bulan;
-	public $tahun;
+	public $ma_pelb;
 
 	// Constructor
 	public function __construct()
@@ -37,12 +35,12 @@ class v0001_periode extends DbTable
 		// Language object
 		if (!isset($Language))
 			$Language = new Language();
-		$this->TableVar = 'v0001_periode';
-		$this->TableName = 'v0001_periode';
+		$this->TableVar = 'v0002_pelabuhan';
+		$this->TableName = 'v0002_pelabuhan';
 		$this->TableType = 'VIEW';
 
 		// Update Table
-		$this->UpdateTable = "`v0001_periode`";
+		$this->UpdateTable = "`v0002_pelabuhan`";
 		$this->Dbid = 'DB';
 		$this->ExportAll = TRUE;
 		$this->ExportPageBreakCount = 0; // Page break per every n record (PDF only)
@@ -61,21 +59,10 @@ class v0001_periode extends DbTable
 		$this->UserIDAllowSecurity = 0; // User ID Allow
 		$this->BasicSearch = new BasicSearch($this->TableVar);
 
-		// periode
-		$this->periode = new DbField('v0001_periode', 'v0001_periode', 'x_periode', 'periode', '`periode`', '`periode`', 3, -1, FALSE, '`periode`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
-		$this->periode->Sortable = TRUE; // Allow sort
-		$this->periode->DefaultErrorMessage = $Language->phrase("IncorrectInteger");
-		$this->fields['periode'] = &$this->periode;
-
-		// bulan
-		$this->bulan = new DbField('v0001_periode', 'v0001_periode', 'x_bulan', 'bulan', '`bulan`', '`bulan`', 200, -1, FALSE, '`bulan`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
-		$this->bulan->Sortable = TRUE; // Allow sort
-		$this->fields['bulan'] = &$this->bulan;
-
-		// tahun
-		$this->tahun = new DbField('v0001_periode', 'v0001_periode', 'x_tahun', 'tahun', '`tahun`', '`tahun`', 200, -1, FALSE, '`tahun`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
-		$this->tahun->Sortable = TRUE; // Allow sort
-		$this->fields['tahun'] = &$this->tahun;
+		// ma_pelb
+		$this->ma_pelb = new DbField('v0002_pelabuhan', 'v0002_pelabuhan', 'x_ma_pelb', 'ma_pelb', '`ma_pelb`', '`ma_pelb`', 200, -1, FALSE, '`ma_pelb`', FALSE, FALSE, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->ma_pelb->Sortable = TRUE; // Allow sort
+		$this->fields['ma_pelb'] = &$this->ma_pelb;
 	}
 
 	// Field Visibility
@@ -117,7 +104,7 @@ class v0001_periode extends DbTable
 	// Table level SQL
 	public function getSqlFrom() // From
 	{
-		return ($this->SqlFrom <> "") ? $this->SqlFrom : "`v0001_periode`";
+		return ($this->SqlFrom <> "") ? $this->SqlFrom : "`v0002_pelabuhan`";
 	}
 	public function sqlFrom() // For backward compatibility
 	{
@@ -412,9 +399,7 @@ class v0001_periode extends DbTable
 		if (!$rs || !is_array($rs) && $rs->EOF)
 			return;
 		$row = is_array($rs) ? $rs : $rs->fields;
-		$this->periode->DbValue = $row['periode'];
-		$this->bulan->DbValue = $row['bulan'];
-		$this->tahun->DbValue = $row['tahun'];
+		$this->ma_pelb->DbValue = $row['ma_pelb'];
 	}
 
 	// Delete uploaded files
@@ -447,7 +432,7 @@ class v0001_periode extends DbTable
 		if (@$_SESSION[$name] <> "") {
 			return $_SESSION[$name];
 		} else {
-			return "v0001_periodelist.php";
+			return "v0002_pelabuhanlist.php";
 		}
 	}
 	public function setReturnUrl($v)
@@ -459,11 +444,11 @@ class v0001_periode extends DbTable
 	public function getModalCaption($pageName)
 	{
 		global $Language;
-		if ($pageName == "v0001_periodeview.php")
+		if ($pageName == "v0002_pelabuhanview.php")
 			return $Language->phrase("View");
-		elseif ($pageName == "v0001_periodeedit.php")
+		elseif ($pageName == "v0002_pelabuhanedit.php")
 			return $Language->phrase("Edit");
-		elseif ($pageName == "v0001_periodeadd.php")
+		elseif ($pageName == "v0002_pelabuhanadd.php")
 			return $Language->phrase("Add");
 		else
 			return "";
@@ -472,16 +457,16 @@ class v0001_periode extends DbTable
 	// List URL
 	public function getListUrl()
 	{
-		return "v0001_periodelist.php";
+		return "v0002_pelabuhanlist.php";
 	}
 
 	// View URL
 	public function getViewUrl($parm = "")
 	{
 		if ($parm <> "")
-			$url = $this->keyUrl("v0001_periodeview.php", $this->getUrlParm($parm));
+			$url = $this->keyUrl("v0002_pelabuhanview.php", $this->getUrlParm($parm));
 		else
-			$url = $this->keyUrl("v0001_periodeview.php", $this->getUrlParm(TABLE_SHOW_DETAIL . "="));
+			$url = $this->keyUrl("v0002_pelabuhanview.php", $this->getUrlParm(TABLE_SHOW_DETAIL . "="));
 		return $this->addMasterUrl($url);
 	}
 
@@ -489,16 +474,16 @@ class v0001_periode extends DbTable
 	public function getAddUrl($parm = "")
 	{
 		if ($parm <> "")
-			$url = "v0001_periodeadd.php?" . $this->getUrlParm($parm);
+			$url = "v0002_pelabuhanadd.php?" . $this->getUrlParm($parm);
 		else
-			$url = "v0001_periodeadd.php";
+			$url = "v0002_pelabuhanadd.php";
 		return $this->addMasterUrl($url);
 	}
 
 	// Edit URL
 	public function getEditUrl($parm = "")
 	{
-		$url = $this->keyUrl("v0001_periodeedit.php", $this->getUrlParm($parm));
+		$url = $this->keyUrl("v0002_pelabuhanedit.php", $this->getUrlParm($parm));
 		return $this->addMasterUrl($url);
 	}
 
@@ -512,7 +497,7 @@ class v0001_periode extends DbTable
 	// Copy URL
 	public function getCopyUrl($parm = "")
 	{
-		$url = $this->keyUrl("v0001_periodeadd.php", $this->getUrlParm($parm));
+		$url = $this->keyUrl("v0002_pelabuhanadd.php", $this->getUrlParm($parm));
 		return $this->addMasterUrl($url);
 	}
 
@@ -526,7 +511,7 @@ class v0001_periode extends DbTable
 	// Delete URL
 	public function getDeleteUrl()
 	{
-		return $this->keyUrl("v0001_periodedelete.php", $this->getUrlParm());
+		return $this->keyUrl("v0002_pelabuhandelete.php", $this->getUrlParm());
 	}
 
 	// Add master url
@@ -616,9 +601,7 @@ class v0001_periode extends DbTable
 	// Load row values from recordset
 	public function loadListRowValues(&$rs)
 	{
-		$this->periode->setDbValue($rs->fields('periode'));
-		$this->bulan->setDbValue($rs->fields('bulan'));
-		$this->tahun->setDbValue($rs->fields('tahun'));
+		$this->ma_pelb->setDbValue($rs->fields('ma_pelb'));
 	}
 
 	// Render list row values
@@ -630,37 +613,16 @@ class v0001_periode extends DbTable
 		$this->Row_Rendering();
 
 		// Common render codes
-		// periode
-		// bulan
-		// tahun
-		// periode
+		// ma_pelb
+		// ma_pelb
 
-		$this->periode->ViewValue = $this->periode->CurrentValue;
-		$this->periode->ViewValue = FormatNumber($this->periode->ViewValue, 0, -2, -2, -2);
-		$this->periode->ViewCustomAttributes = "";
+		$this->ma_pelb->ViewValue = $this->ma_pelb->CurrentValue;
+		$this->ma_pelb->ViewCustomAttributes = "";
 
-		// bulan
-		$this->bulan->ViewValue = $this->bulan->CurrentValue;
-		$this->bulan->ViewCustomAttributes = "";
-
-		// tahun
-		$this->tahun->ViewValue = $this->tahun->CurrentValue;
-		$this->tahun->ViewCustomAttributes = "";
-
-		// periode
-		$this->periode->LinkCustomAttributes = "";
-		$this->periode->HrefValue = "";
-		$this->periode->TooltipValue = "";
-
-		// bulan
-		$this->bulan->LinkCustomAttributes = "";
-		$this->bulan->HrefValue = "";
-		$this->bulan->TooltipValue = "";
-
-		// tahun
-		$this->tahun->LinkCustomAttributes = "";
-		$this->tahun->HrefValue = "";
-		$this->tahun->TooltipValue = "";
+		// ma_pelb
+		$this->ma_pelb->LinkCustomAttributes = "";
+		$this->ma_pelb->HrefValue = "";
+		$this->ma_pelb->TooltipValue = "";
 
 		// Call Row Rendered event
 		$this->Row_Rendered();
@@ -677,27 +639,13 @@ class v0001_periode extends DbTable
 		// Call Row Rendering event
 		$this->Row_Rendering();
 
-		// periode
-		$this->periode->EditAttrs["class"] = "form-control";
-		$this->periode->EditCustomAttributes = "";
-		$this->periode->EditValue = $this->periode->CurrentValue;
-		$this->periode->PlaceHolder = RemoveHtml($this->periode->caption());
-
-		// bulan
-		$this->bulan->EditAttrs["class"] = "form-control";
-		$this->bulan->EditCustomAttributes = "";
+		// ma_pelb
+		$this->ma_pelb->EditAttrs["class"] = "form-control";
+		$this->ma_pelb->EditCustomAttributes = "";
 		if (REMOVE_XSS)
-			$this->bulan->CurrentValue = HtmlDecode($this->bulan->CurrentValue);
-		$this->bulan->EditValue = $this->bulan->CurrentValue;
-		$this->bulan->PlaceHolder = RemoveHtml($this->bulan->caption());
-
-		// tahun
-		$this->tahun->EditAttrs["class"] = "form-control";
-		$this->tahun->EditCustomAttributes = "";
-		if (REMOVE_XSS)
-			$this->tahun->CurrentValue = HtmlDecode($this->tahun->CurrentValue);
-		$this->tahun->EditValue = $this->tahun->CurrentValue;
-		$this->tahun->PlaceHolder = RemoveHtml($this->tahun->caption());
+			$this->ma_pelb->CurrentValue = HtmlDecode($this->ma_pelb->CurrentValue);
+		$this->ma_pelb->EditValue = $this->ma_pelb->CurrentValue;
+		$this->ma_pelb->PlaceHolder = RemoveHtml($this->ma_pelb->caption());
 
 		// Call Row Rendered event
 		$this->Row_Rendered();
@@ -728,13 +676,9 @@ class v0001_periode extends DbTable
 			if ($doc->Horizontal) { // Horizontal format, write header
 				$doc->beginExportRow();
 				if ($exportPageType == "view") {
-					$doc->exportCaption($this->periode);
-					$doc->exportCaption($this->bulan);
-					$doc->exportCaption($this->tahun);
+					$doc->exportCaption($this->ma_pelb);
 				} else {
-					$doc->exportCaption($this->periode);
-					$doc->exportCaption($this->bulan);
-					$doc->exportCaption($this->tahun);
+					$doc->exportCaption($this->ma_pelb);
 				}
 				$doc->endExportRow();
 			}
@@ -766,13 +710,9 @@ class v0001_periode extends DbTable
 				if (!$doc->ExportCustom) {
 					$doc->beginExportRow($rowCnt); // Allow CSS styles if enabled
 					if ($exportPageType == "view") {
-						$doc->exportField($this->periode);
-						$doc->exportField($this->bulan);
-						$doc->exportField($this->tahun);
+						$doc->exportField($this->ma_pelb);
 					} else {
-						$doc->exportField($this->periode);
-						$doc->exportField($this->bulan);
-						$doc->exportField($this->tahun);
+						$doc->exportField($this->ma_pelb);
 					}
 					$doc->endExportRow($rowCnt);
 				}

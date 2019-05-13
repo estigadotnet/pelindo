@@ -1,5 +1,5 @@
 <?php
-namespace PHPMaker2019\project1;
+namespace PHPMaker2019\pelindo_prj;
 
 /**
  * Page class
@@ -11,7 +11,7 @@ class t0002_jasa_view extends t0002_jasa
 	public $PageID = "view";
 
 	// Project ID
-	public $ProjectID = "{C44F9D66-099F-4CF9-9DCC-1FF3E612E32E}";
+	public $ProjectID = "{4C62D2CC-E7E3-42AE-8875-EDB884DF627D}";
 
 	// Table name
 	public $TableName = 't0002_jasa';
