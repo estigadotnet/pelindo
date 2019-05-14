@@ -7074,7 +7074,7 @@ function Database_Connecting(&$info) {
 		$info["db"] = "db_pelindo"; // sesuaikan dengan nama database di komputer localhost
 		$lines=file('00_dbport.txt');foreach ($lines as $line_num => $line){$port = $line;}
 		$info["port"] = $port; //$info["port"] = "3306";
-	} elseif (_CurrentHost () == "pelindo.estiga.net") { // setting koneksi database untuk komputer server
+	} elseif (CurrentHost () == "pelindo.estiga.net") { // setting koneksi database untuk komputer server
 		$info["host"] = "mysql.idhostinger.com";  // sesuaikan dengan ip address atau hostname komputer server
 		$info["user"] = "u473805576_pelin"; // sesuaikan dengan username database di komputer server
 		$info["pass"] = "PresarioCQ43"; // sesuaikan deengan password database di komputer server
