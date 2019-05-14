@@ -96,7 +96,7 @@ class Report2 extends ReportTable
 		$this->fields['dT'] = &$this->dT;
 
 		// Chart1
-		$this->Chart1 = new DbChart($this, 'Chart1', 'Chart1', 'dT', 'periode2', 1, '', 0, 'COUNT', 600, 500);
+		$this->Chart1 = new DbChart($this, 'Chart1', 'Chart1', 'dT', 'periode2', 1002, '', 0, 'COUNT', 600, 500);
 		$this->Chart1->SortType = 0;
 		$this->Chart1->SortSequence = "";
 		$this->Chart1->SqlSelect = "SELECT `dT`, '', COUNT(`periode2`) FROM ";
@@ -104,7 +104,7 @@ class Report2 extends ReportTable
 		$this->Chart1->SqlOrderBy = "";
 		$this->Chart1->SeriesDateType = "";
 		$this->Chart1->ID = "Report2_Chart1"; // Chart ID
-		$this->Chart1->setParameters([new ChartParameter("type", "1", FALSE),
+		$this->Chart1->setParameters([new ChartParameter("type", "1002", FALSE),
 			new ChartParameter("seriestype", "0", FALSE)]);  // Chart type / Chart series type
 		$this->Chart1->setParameter("bgcolor", "FCFCFC", TRUE); // Background color
 		$this->Chart1->setParameters([new ChartParameter("caption", $this->Chart1->caption()),
