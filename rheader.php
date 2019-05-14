@@ -1,10 +1,12 @@
 <?php
 namespace PHPReportMaker12\pelindo_prj;
 ?>
+<?php if (@$ExportType == "email" || @$ExportType == "pdf") ob_clean(); ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title><?php echo $ReportLanguage->projectPhrase("BodyTitle") ?></title>
+<?php if (@$ExportType == "" || @$ExportType == "print") { ?>
 <script>
 var RELATIVE_PATH = "<?php echo $RELATIVE_PATH ?>";
 var isAbsoluteUrl = function(url) {
@@ -22,6 +24,7 @@ var getCss = function(url) {
 	document.write("<link rel=\"stylesheet\" type=\"text/css\" href=\"" + url + "\">");
 }
 </script>
+<?php } ?>
 <?php if (@$ExportType == "" || @$ExportType == "print") { ?>
 <script>
 getCss("adminlte3/css/<?php echo CssFile("adminlte.css") ?>");
@@ -45,6 +48,7 @@ getCss("<?php echo CssFile(PROJECT_STYLESHEET_FILENAME) ?>");
 ?>
 </style>
 <?php } ?>
+<?php if (@$ExportType == "" || @$ExportType == "print") { ?>
 <script>if (!window.jQuery) getScript("jquery/jquery-3.4.1.min.js");</script>
 <script>
 if (window.jQuery && !jQuery.colorbox) getCss("colorbox/colorbox.css");
@@ -60,6 +64,8 @@ if (window.jQuery && !window.jQuery.fn.typeahead) getScript("phprptjs/typeahead.
 <?php foreach ($JAVASCRIPT_FILES as $jsfile) { // External JavaScripts ?>
 <script>getScript("<?php echo $jsfile ?>");</script>
 <?php } ?>
+<?php } ?>
+<?php if (@$ExportType == "" || @$ExportType == "print") { ?>
 <?php if (@$CustomExportType == "") { ?>
 <script src="<?php echo $RELATIVE_PATH . $FUSIONCHARTS_PATH ?>fusioncharts.js"></script>
 <script src="<?php echo $RELATIVE_PATH . $FUSIONCHARTS_PATH ?>themes/fusioncharts.theme.ocean.js"></script>
@@ -124,20 +130,34 @@ jQuery.extend(ew, {
 });
 </script>
 <script>if (window.jQuery && !window.jQuery.views) getScript("phprptjs/jsrender.min.js");</script>
+<?php } ?>
+<?php if (@$ExportType == "" || @$ExportType == "print") { ?>
 <script>
 <?php echo $ReportLanguage->toJson(); ?>
 ew.vars = <?php echo JsonEncode($CLIENT_VAR) ?>;
+</script>
+<script>
+(function($) {
+	if (!$.fn.datetimepicker) {
+		$.getScript("phprptjs/bootstrap-datetimepicker.js");
+		getCss("phprptcss/bootstrap-datetimepicker.css");
+	}
+	if (!ew.createDateTimePicker)
+		$.getScript("phprptjs/ewdatetimepicker.js");
+})(jQuery);
 </script>
 <script>getScript("phprptjs/rusrfn12.js");</script>
 <script>
 
 // Write your client script here, no need to add script tags.
 </script>
+<?php } ?>
 <link rel="shortcut icon" type="image/png" href="<?php echo $RELATIVE_PATH ?>PELINDO III"><link rel="icon" type="image/png" href="<?php echo $RELATIVE_PATH ?>PELINDO III">
 <meta name="generator" content="PHP Report Maker v12.0.6">
 </head>
 <body class="<?php echo $BODY_CLASS ?>" dir="<?php echo ($CSS_FLIP) ? "rtl" : "ltr" ?>">
 <?php if (@!$SkipHeaderFooter) { ?>
+<?php if (@$ExportType == "") { ?>
 <div class="wrapper ew-layout">
 	<!-- Main Header -->
 	<?php include_once "rmenu.php" ?>
@@ -191,4 +211,5 @@ ew.vars = <?php echo JsonEncode($CLIENT_VAR) ?>;
 		<!-- Main content -->
 		<section class="content">
 		<div class="container-fluid">
+<?php } ?>
 <?php } ?>

@@ -371,13 +371,13 @@ class Report2_summary extends Report2
 		// Printer friendly
 		$item = &$this->ExportOptions->add("print");
 		$item->Body = $this->getExportTag("print");
-		$item->Visible = FALSE;
+		$item->Visible = TRUE;
 		$reportTypes["print"] = $item->Visible ? $ReportLanguage->phrase("ReportFormPrint") : "";
 
 		// Export to Excel
 		$item = &$this->ExportOptions->add("excel");
 		$item->Body = $this->getExportTag("excel");
-		$item->Visible = FALSE;
+		$item->Visible = TRUE;
 		$reportTypes["excel"] = $item->Visible ? $ReportLanguage->phrase("ReportFormExcel") : "";
 
 		// Export to Word
@@ -390,7 +390,7 @@ class Report2_summary extends Report2
 		$item = &$this->ExportOptions->add("pdf");
 		$item->Body = $this->getExportTag("pdf");
 		$item->Visible = FALSE;
-		$item->Visible = FALSE;
+		$item->Visible = TRUE;
 		$reportTypes["pdf"] = $item->Visible ? $ReportLanguage->phrase("ReportFormPdf") : "";
 
 		// Export to Email
@@ -1208,7 +1208,125 @@ class Report2_summary extends Report2
 	{
 		global $ReportLanguage, $ReportOptions;
 		$reportTypes = $ReportOptions["ReportTypes"];
+		$item = &$this->ExportOptions->getItem("pdf");
+		$item->Visible = TRUE;
+		if ($item->Visible)
+			$reportTypes["pdf"] = $ReportLanguage->phrase("ReportFormPdf");
+		$item->Body = "<a class=\"ew-export-link ew-pdf\" title=\"" . HtmlEncode($ReportLanguage->phrase("ExportToPDF", TRUE)) . "\" data-caption=\"" . HtmlEncode($ReportLanguage->phrase("ExportToPDF", TRUE)) . "\" href=\"javascript:void(0);\" onclick=\"ew.exportWithCharts(event, '" . $this->ExportPdfUrl . "', '" . session_id() . "');\">" . $ReportLanguage->phrase("ExportToPDF") . "</a>";
 		$ReportOptions["ReportTypes"] = $reportTypes;
+	}
+
+	// Export to HTML
+	public function exportHtml($html)
+	{
+
+		//global $ExportFileName;
+		//header('Content-Type: text/html' . (PROJECT_CHARSET <> '' ? ';charset=' . PROJECT_CHARSET : ''));
+		//header('Content-Disposition: attachment; filename=' . $ExportFileName . '.html');
+
+		$folder = ReportParam("folder", "");
+		$fileName = ReportParam("filename", "");
+		$responseType = ReportParam("responsetype", "");
+		$saveToFile = "";
+
+		// Save generate file for print
+		if ($folder <> "" && $fileName <> "" && ($responseType == "json" || $responseType == "file" && REPORT_SAVE_OUTPUT_ON_SERVER)) {
+			$baseTag = "<base href=\"" . BaseUrl() . "\">";
+			$html = preg_replace('/<head>/', '<head>' . $baseTag, $html);
+			SaveFile($folder, $fileName, $html);
+			$saveToFile = UploadPath(FALSE, $folder) . $fileName;
+		}
+		if ($saveToFile == "" || $responseType == "file")
+			Write($html);
+		return $saveToFile;
+	}
+
+	// Export to Excel
+	public function exportExcel($html)
+	{
+		global $ExportFileName;
+		$folder = ReportParam("folder", "");
+		$fileName = ReportParam("filename", "");
+		$responseType = ReportParam("responsetype", "");
+		$saveToFile = "";
+		if ($folder <> "" && $fileName <> "" && ($responseType == "json" || $responseType == "file" && REPORT_SAVE_OUTPUT_ON_SERVER)) {
+		 	SaveFile(ServerMapPath($folder), $fileName, $html);
+			$saveToFile = UploadPath(FALSE, $folder) . $fileName;
+		}
+		if ($saveToFile == "" || $responseType == "file") {
+			AddHeader('Set-Cookie', 'fileDownload=true; path=/');
+			AddHeader('Content-Type', 'application/vnd.ms-excel' . (PROJECT_CHARSET <> '' ? ';charset=' . PROJECT_CHARSET : ''));
+			AddHeader('Content-Disposition', 'attachment; filename=' . $ExportFileName . '.xls');
+			Write($html);
+		}
+		return $saveToFile;
+	}
+
+	// Export PDF
+	public function exportPdf($html)
+	{
+		global $ExportFileName, $PDF_MEMORY_LIMIT, $PDF_TIME_LIMIT, $PDF_IMAGE_SCALE_FACTOR;
+		@ini_set("memory_limit", $PDF_MEMORY_LIMIT);
+		set_time_limit($PDF_TIME_LIMIT);
+		$html = CheckHtml($html);
+		if (DEBUG_ENABLED) // Add debug message
+			$html = str_replace("</body>", GetDebugMessage() . "</body>", $html);
+		$dompdf = new \Dompdf\Dompdf(["pdf_backend" => "Cpdf"]);
+		$doc = new \DOMDocument("1.0", "utf-8");
+		@$doc->loadHTML('<?xml encoding="uft-8">' . ConvertToUtf8($html)); // Convert to utf-8
+		$spans = $doc->getElementsByTagName("span");
+		foreach ($spans as $span) {
+			$classNames = $span->getAttribute("class");
+			if ($classNames == "ew-filter-caption") // Insert colon
+				$span->parentNode->insertBefore($doc->createElement("span", ":&nbsp;"), $span->nextSibling);
+			elseif (preg_match('/\bicon\-\w+\b/', $classNames)) // Remove icons
+				$span->parentNode->removeChild($span);
+		}
+		$images = $doc->getElementsByTagName("img");
+		$pageSize = "a4";
+		$pageOrientation = "portrait";
+		$this->ExportPageOrientation = $pageOrientation;
+		$portrait = SameText($pageOrientation, "portrait");
+		foreach ($images as $image) {
+			$imagefn = $image->getAttribute("src");
+			if (file_exists($imagefn)) {
+				$imagefn = realpath($imagefn);
+				$size = getimagesize($imagefn); // Get image size
+				if ($size[0] <> 0) {
+					if (SameText($pageSize, "letter")) { // Letter paper (8.5 in. by 11 in.)
+						$w = $portrait ? 216 : 279;
+					} elseif (SameText($pageSize, "legal")) { // Legal paper (8.5 in. by 14 in.)
+						$w = $portrait ? 216 : 356;
+					} else {
+						$w = $portrait ? 210 : 297; // A4 paper (210 mm by 297 mm)
+					}
+					$w = min($size[0], ($w - 20 * 2) / 25.4 * 72 * $PDF_IMAGE_SCALE_FACTOR); // Resize image, adjust the scale factor if necessary
+					$h = $w / $size[0] * $size[1];
+					$image->setAttribute("width", $w);
+					$image->setAttribute("height", $h);
+				}
+			}
+		}
+		$html = $doc->saveHTML();
+		$html = ConvertFromUtf8($html);
+		$dompdf->load_html($html);
+		$dompdf->set_paper($pageSize, $pageOrientation);
+		$dompdf->render();
+		$folder = ReportParam("folder", "");
+		$fileName = ReportParam("filename", "");
+		$responseType = ReportParam("responsetype", "");
+		$saveToFile = "";
+		if ($folder <> "" && $fileName <> "" && ($responseType == "json" || $responseType == "file" && REPORT_SAVE_OUTPUT_ON_SERVER)) {
+			SaveFile(ServerMapPath($folder), $fileName, $dompdf->output());
+			$saveToFile = UploadPath(FALSE, $folder) . $fileName;
+		}
+		if ($saveToFile == "" || $responseType == "file") {
+			AddHeader('Set-Cookie', 'fileDownload=true; path=/');
+			$exportFile = EndsText(".pdf", $ExportFileName) ? $ExportFileName : $ExportFileName . ".pdf";
+			$dompdf->stream($exportFile, ["Attachment" => 1]); // 0 to open in browser, 1 to download
+		}
+		DeleteTempImages($html);
+		return $saveToFile;
 	}
 
 	// Set up starting group

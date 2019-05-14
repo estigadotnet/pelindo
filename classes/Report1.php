@@ -38,7 +38,7 @@ class Report1 extends ReportTable
 		$this->TableReportType = 'summary';
 		$this->SourceTableIsCustomView = FALSE;
 		$this->Dbid = 'DB';
-		$this->ExportAll = FALSE;
+		$this->ExportAll = TRUE;
 		$this->ExportPageBreakCount = 0;
 
 		// MA_PELB

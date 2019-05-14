@@ -37,10 +37,12 @@ $Page->Page_Render();
 <?php if (!$DashboardReport) { ?>
 <?php include_once "rheader.php" ?>
 <?php } ?>
+<?php if ($Page->Export == "" || $Page->Export == "print") { ?>
 <script>
 currentPageID = ew.PAGE_ID = "summary"; // Page ID
 </script>
-<?php if (!$Page->DrillDown && !$DashboardReport) { ?>
+<?php } ?>
+<?php if ($Page->Export == "" && !$Page->DrillDown && !$DashboardReport) { ?>
 <script>
 
 // Form object
@@ -81,7 +83,7 @@ fReport1summary.lists["x_periode2"] = <?php echo $Report1_summary->periode2->Loo
 fReport1summary.lists["x_periode2"].options = <?php echo JsonEncode($Report1_summary->periode2->lookupOptions()) ?>;
 </script>
 <?php } ?>
-<?php if (!$Page->DrillDown && !$DashboardReport) { ?>
+<?php if ($Page->Export == "" && !$Page->DrillDown && !$DashboardReport) { ?>
 <script>
 
 // Write your client script here, no need to add script tags.
@@ -115,8 +117,10 @@ if (!$Page->DrillDownInPanel) {
 <div id="ew-center" class="<?php echo $Report1_summary->CenterContentClass ?>">
 <?php } ?>
 <!-- Summary Report begins -->
+<?php if ($Page->Export <> "pdf") { ?>
 <div id="report_summary">
-<?php if (!$Page->DrillDown && !$DashboardReport) { ?>
+<?php } ?>
+<?php if ($Page->Export == "" && !$Page->DrillDown && !$DashboardReport) { ?>
 <!-- Search form (begin) -->
 <?php
 
@@ -225,13 +229,17 @@ while ($Page->Recordset && !$Page->Recordset->EOF && $Page->GroupCount <= $Page-
 
 	if ($Page->ShowHeader) {
 ?>
+<?php if ($Page->Export <> "pdf") { ?>
 <?php if ($Page->Export == "word" || $Page->Export == "excel") { ?>
 <div class="ew-grid"<?php echo $Page->ReportTableStyle ?>>
 <?php } else { ?>
 <div class="card ew-card ew-grid"<?php echo $Page->ReportTableStyle ?>>
 <?php } ?>
+<?php } ?>
 <!-- Report grid (begin) -->
+<?php if ($Page->Export <> "pdf") { ?>
 <div id="gmp_Report1" class="<?php if (IsResponsiveLayout()) { echo "table-responsive "; } ?>ew-grid-middle-panel">
+<?php } ?>
 <table class="<?php echo $Page->ReportTableClass ?>">
 <thead>
 	<!-- Table header -->
@@ -415,27 +423,37 @@ while ($Page->Recordset && !$Page->Recordset->EOF && $Page->GroupCount <= $Page-
 <?php } ?>
 	</tfoot>
 <?php } elseif (!$Page->ShowHeader && FALSE) { // No header displayed ?>
+<?php if ($Page->Export <> "pdf") { ?>
 <?php if ($Page->Export == "word" || $Page->Export == "excel") { ?>
 <div class="ew-grid"<?php echo $Page->ReportTableStyle ?>>
 <?php } else { ?>
 <div class="card ew-card ew-grid"<?php echo $Page->ReportTableStyle ?>>
 <?php } ?>
+<?php } ?>
 <!-- Report grid (begin) -->
+<?php if ($Page->Export <> "pdf") { ?>
 <div id="gmp_Report1" class="<?php if (IsResponsiveLayout()) { echo "table-responsive "; } ?>ew-grid-middle-panel">
+<?php } ?>
 <table class="<?php echo $Page->ReportTableClass ?>">
 <?php } ?>
 <?php if ($Page->TotalGroups > 0 || FALSE) { // Show footer ?>
 </table>
+<?php if ($Page->Export <> "pdf") { ?>
 </div>
-<?php if (!($Page->DrillDown && $Page->TotalGroups > 0)) { ?>
+<?php } ?>
+<?php if ($Page->Export == "" && !($Page->DrillDown && $Page->TotalGroups > 0)) { ?>
 <div class="card-footer ew-grid-lower-panel">
 <?php include "Report1_pager.php" ?>
 <div class="clearfix"></div>
 </div>
 <?php } ?>
+<?php if ($Page->Export <> "pdf") { ?>
 </div>
 <?php } ?>
+<?php } ?>
+<?php if ($Page->Export <> "pdf") { ?>
 </div>
+<?php } ?>
 <!-- Summary Report Ends -->
 <?php if ($Page->Export == "" && !$DashboardReport) { ?>
 </div>
@@ -462,7 +480,7 @@ if ($Page->GroupRecordset)
 if ($Page->Recordset)
 	$Page->Recordset->Close();
 ?>
-<?php if (!$Page->DrillDown && !$DashboardReport) { ?>
+<?php if ($Page->Export == "" && !$Page->DrillDown && !$DashboardReport) { ?>
 <script>
 
 // Write your table-specific startup script here

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Project Product="PHPReportMaker" Version="12.0.6" ProjID="{861E6985-2C05-482D-BA73-845500113417}" ProjName="pelindo_prj" MultiLanguage="0" DefaultLanguageFile="english.xml" LanguageFiles="english.xml" AppCompat="0" AppHeader="" AppFooter="" AppLogin="" AppLogout="" AppDefault="" AppExportMenu="0" ReportsEncryptKey="FImDRtum4rAt44zw" AppCompatVersion="7" AppRelatedProject="" SQLQuote="" CodePage="0" Cache="0" CharSet="" CSS="" OutputNameType="Original" OutputNameExt="" OutputNameLCase="0" BodyTitle="PELINDO III" BodyFont="Verdana" BodySize="0.675" BodyBgColor="" BodyTextColor="" BodyLnkColor="" BodyVLnkColor="" BodyALnkColor="" BodyLeftMargin="0" BodyTopMargin="0" DocType="" ApplicationTheme="Blue" HeaderColor="" HeaderLogo="PELINDO III" HeaderHeight="0" MenuColor="" FooterColor="" FooterFontColor="" FooterText="&amp;copy;2019 ESTIGADOTNET. All rights reserved." TblWidth="" TblPadding="0" TblBorder="0" TblSpacing="0" TblBgColor="" TblHdrFontColor="" TblHdrColor="" TblAltColor="1" TblAltColor1="" TblAltColor2="" Template="C:\Program Files (x86)\PHP Report Maker 12\template\phprpt120.zip" Destination="C:\xampp\htdocs\pelindo\" SecType="None" SecLoginID="" SecPasswd="" SecTbl="" SecLoginIDFld="" SecPasswdFld="" SecEmailFld="" SecForgetPwdPage="0" SecChangePwdPage="0" SecChangeEmail="0" SecRegisterPage="0" SecLoginCaptcha="0" SecRegisterActivate="0" SecRegisterActivateFld="" SecRegisterEmail="0" SecSenderEmail="" SmtpServer="localhost" SmtpServerPort="25" SmtpSecureOption="" MemoCRLFReplace="1" TestWebServer="1" DefaultDateFormat="5" DateSeparator="/" SetLocale="0" Locale="" CGI="0" CGIPath="#!/usr/local/bin/php" UseMySqli="0" StartPage="" XMLEncoding="" RptColColor="" RptGrpColor1="" RptGrpColor2="" RptGrpColor3="" RptGrpColor4="" RptGrpSummaryColor1="" RptGrpSummaryColor2="" RptGrpSummaryColor3="" RptGrpSummaryColor4="" RptPageTotalColor="" RptGrandTotalColor="" EditBackColor="" EditForeColor="" PagerBackColor="" FooterBackColor="" UploadPath="files/" UseCss="1" CssStyles="" AutoSync="1" AutoBrowseURL="" AutoBrowse="0" BodyStyle="" OtherGenList="@config=1,@lang_english.xml=1,@@locale_en=1,composer.json=1,bootstrap=1,adminlte=1,@css=1,@adminltecss=1,@bundlecss=1,@bundlejs=1,fonts=1,plugins=1,ewr.js=1,jsrender.min.js=1,jquery=1,moment=1,typeahead.js=1,mobile-detect.js=1,clipboard.js=1,adminlte.js=1,colorbox=1,ew.js=1,passwordhash.php=1,ewmysql=1,ewconfig=1,phpfn=1,charttypes=1,api=1,apiclass=1,file=1,ewemail=1,rptautoload=1,FusionChartsTrial=1,exportchart=1,rptuserglobaljs=1,rptusereventjs=1,rptconfig=1,rptphpfn=1,rptuserfn=1,rptheader=1,rptmenu=1,rptfooter=1,rptindex=1,rptindex|class=1,ganttchart=1" OtherGen="1" OtherExpanded="0" DynamicLoadDB="0" MD5Password="0" CaseSensitivePassword="0" ServerValidate="0" ClientValidate="1" RecPerPage="20" RecPerPageList="1,2,3,4,5,10,20,50,ALL" PrinterFriendly="0" ExportHtml="0" ExportWord="0" ExportExcel="0" ExportXml="0" ExportCsv="0" ExportEmail="0" ExportPDF="0" ExportType="" RecPerRow="0" MultiDelete="0" SortType="0" PagerStyle="2" TopPageLink="0" BottomPageLink="1" LinkOnLeft="0" RepeatColumns="5" AppRootFolder="C:\xampp\htdocs\pelindo\" RootRelativePath="." EmailComponent="" RecipientEmail="" SMTPServerUsername="" SMTPServerPassword="" FavIcon="PELINDO III" LoginOption="" ChartMenuItems="1" UseDropDownForExport="0" Composer="1" Restore="0">
+<Project Product="PHPReportMaker" Version="12.0.6" ProjID="{861E6985-2C05-482D-BA73-845500113417}" ProjName="pelindo_prj" MultiLanguage="0" DefaultLanguageFile="english.xml" LanguageFiles="english.xml" AppCompat="0" AppHeader="" AppFooter="" AppLogin="" AppLogout="" AppDefault="" AppExportMenu="0" ReportsEncryptKey="FImDRtum4rAt44zw" AppCompatVersion="7" AppRelatedProject="" SQLQuote="" CodePage="0" Cache="0" CharSet="" CSS="" OutputNameType="Original" OutputNameExt="" OutputNameLCase="0" BodyTitle="PELINDO III" BodyFont="Verdana" BodySize="0.675" BodyBgColor="" BodyTextColor="" BodyLnkColor="" BodyVLnkColor="" BodyALnkColor="" BodyLeftMargin="0" BodyTopMargin="0" DocType="" ApplicationTheme="Blue" HeaderColor="" HeaderLogo="PELINDO III" HeaderHeight="0" MenuColor="" FooterColor="" FooterFontColor="" FooterText="&amp;copy;2019 ESTIGADOTNET. All rights reserved." TblWidth="" TblPadding="0" TblBorder="0" TblSpacing="0" TblBgColor="" TblHdrFontColor="" TblHdrColor="" TblAltColor="1" TblAltColor1="" TblAltColor2="" Template="C:\Program Files (x86)\PHP Report Maker 12\template\phprpt120.zip" Destination="C:\xampp\htdocs\pelindo\" SecType="None" SecLoginID="" SecPasswd="" SecTbl="" SecLoginIDFld="" SecPasswdFld="" SecEmailFld="" SecForgetPwdPage="0" SecChangePwdPage="0" SecChangeEmail="0" SecRegisterPage="0" SecLoginCaptcha="0" SecRegisterActivate="0" SecRegisterActivateFld="" SecRegisterEmail="0" SecSenderEmail="" SmtpServer="localhost" SmtpServerPort="25" SmtpSecureOption="" MemoCRLFReplace="1" TestWebServer="1" DefaultDateFormat="5" DateSeparator="/" SetLocale="0" Locale="" CGI="0" CGIPath="#!/usr/local/bin/php" UseMySqli="0" StartPage="" XMLEncoding="" RptColColor="" RptGrpColor1="" RptGrpColor2="" RptGrpColor3="" RptGrpColor4="" RptGrpSummaryColor1="" RptGrpSummaryColor2="" RptGrpSummaryColor3="" RptGrpSummaryColor4="" RptPageTotalColor="" RptGrandTotalColor="" EditBackColor="" EditForeColor="" PagerBackColor="" FooterBackColor="" UploadPath="files/" UseCss="1" CssStyles="" AutoSync="1" AutoBrowseURL="" AutoBrowse="0" BodyStyle="" OtherGenList="@config=1,@lang_english.xml=1,@@locale_en=1,composer.json=1,bootstrap=1,adminlte=1,@css=1,@adminltecss=1,@bundlecss=1,@bundlejs=1,fonts=1,plugins=1,ewr.js=1,jsrender.min.js=1,jquery=1,moment=1,typeahead.js=1,mobile-detect.js=1,clipboard.js=1,adminlte.js=1,colorbox=1,ew.js=1,passwordhash.php=1,ewmysql=1,ewconfig=1,phpfn=1,charttypes=1,api=1,apiclass=1,file=1,ewemail=1,rptautoload=1,FusionChartsTrial=1,exportchart=1,rptuserglobaljs=1,rptusereventjs=1,rptconfig=1,rptphpfn=1,rptuserfn=1,rptheader=1,rptmenu=1,rptfooter=1,rptindex=1,rptindex|class=1,ganttchart=1,rptpdf.css=1,datetimepickerjs=1,ewdatetimepickerjs=1,datetimepickerscss=1,rcaptcha.php=1,Captcha.php=1,aftershock.ttf=1" OtherGen="1" OtherExpanded="0" DynamicLoadDB="0" MD5Password="0" CaseSensitivePassword="0" ServerValidate="0" ClientValidate="1" RecPerPage="20" RecPerPageList="1,2,3,4,5,10,20,50,ALL" PrinterFriendly="1" ExportHtml="1" ExportWord="0" ExportExcel="1" ExportXml="0" ExportCsv="0" ExportEmail="0" ExportPDF="1" ExportType="ALL" RecPerRow="0" MultiDelete="0" SortType="0" PagerStyle="2" TopPageLink="0" BottomPageLink="1" LinkOnLeft="0" RepeatColumns="5" AppRootFolder="C:\xampp\htdocs\pelindo\" RootRelativePath="." EmailComponent="" RecipientEmail="" SMTPServerUsername="" SMTPServerPassword="" FavIcon="PELINDO III" LoginOption="" ChartMenuItems="1" UseDropDownForExport="0" JavaScripts="" StyleSheets="" Composer="1" Restore="0">
   <Database DBID="DB" DBName="db_pelindo" DBType="MySQL" DBPath="" DBUseServerMapPath="0" DBPhyPath="" DBSID="" DBConnectionMethod="DIRECT" DBURL="" DBHost="localhost" DBPort="3307" DBEncoding="" DBUID="root" DBPwd="admin" DBQuoteS="`" DBQuoteE="`" DBConnstr="" DBADOVer="" DBDBMSName="MySQL" DBDBMSVer="50505" DBOLEDBVer="" DBProviderName="e.World Technology Ltd." DBProviderVer="12.0" DBSchema="" MaxUploadSize="0" UseDynamicUserLevel="0">
     <Table TblSchema="" TblName="kapal_all_20162018_vasa" TblType="TABLE" TblGen="0" TblGenList="" TblList="1" TblView="0" TblInlineEdit="0" TblEdit="0" TblAdd="0" TblAnonymous="0" TblDelete="0" TblCaption="kapal all 20162018 vasa" TblUpdatable="1" TblSQL="" TblError="" TblSrchType="BASIC" TblExtSearchFldPerRow="0" TblDefault="0" TblCopy="0" TblFilter="" TblUserIDFld="" TblSecurity="" TblExpanded="0" TblLoaded="1" TblRptShowSummaryView="0" TblRptShowDetails="1" TblRptShowGrandTotal="0" OutputFolder="" IncludeFiles="1" TblReportType="rpt" TblShowReport="1" TblRptShowPageTotal="0" TblRowSum="0" TblShowEmptyRows="0" TblGenReport="0" TblCustomSQL="" TblCustomError="" TblRptSrc="kapal_all_20162018_vasa" TblUseGlobal="1" TblRecPerPage="3" TblRecPerPageList="1,2,3,4,5,10,20,50,ALL" TblPrinterFriendly="0" TblExportHtml="0" TblExportWord="0" TblExportExcel="0" TblExportXml="0" TblExportCsv="0" TblExportEmail="0" TblExportPDF="0" TblExportType="" TblExportPageBreakCount="0" TblRecPerRow="0" TblMultiDelete="0" TblSortType="1" TblPagerStyle="2" TblTopPageLink="0" TblBottomPageLink="1" TblLinkOnLeft="0" TblShowBlankListPage="0" TblUserLevelPriv="1" TblUseDropDownForExport="1" TblDashboardType="" LinkDBID="" LinkTableName="" LinkTableType="" CrosstabSummaryFields="" CrosstabSummaryTypes="" ShowGroupHeaderAsRow="0" ShowCompactSummaryFooter="1">
       <Field FldName="MA_PELB" FldAlias="0" FldSourceName="" FldSourceTable="" FldSourceField="" FldType="200" FldTypeName="VARCHAR" NativeDataType="253" FldSQL="" FldIsCustom="0" FldSupport="1" FldSort="1" FldSize="14" FldUniqueIdx="0" FldZeroLen="0" FldReq="0" FldIsPrimaryKey="0" FldAutoIncrement="0" FldAttribute="100" FldMin="" FldMax="" FldErrMsg="" FldValidate="" FldServerValidateArgs="" FldClientValidateArgs="" FldRequired="0" FldPopCalendar="0" FldGenerate="1" FldList="1" FldView="1" FldEdit="1" FldAdd="1" FldSearch="0" FldBasicSearch="1" FldExtendedBasicSearch="0" FldFilterDropDown="0" FldDateSearch="" FldDateSearchDefaultYear="" FldDateSearchDefaultQuarter="" FldDateSearchDefaultMonth="" FldDateSearchDefaultDay="" FldSearchMultiValue="0" FldRegister="0" FldSrchOpr="LIKE" FldSrchOpr2="" FldDefault="" FldDefault2="" FldDefaultSearch="" FldCaption="MA PELB" FldViewTag="FORMATTED TEXT" FldViewThumbnail="0" FldHtmlTag="TEXT" FldTagSize="30" FldTagMaxLength="14" FldTagValues="" FldHtmlTagReadOnly="0" FldTagHiddenValue="" FldSelectType="Values" FldTagLnkTbl="" FldTagLnkFld="" FldTagLnkDisplay="" FldTagLnkDisp2="" FldTagLnkDisp3="" FldTagLnkDisp4="" FldTagLnkOrderBy="" FldTagLnkOrderType="" FldTagLnkDistinct="0" FldTagCols="0" FldTagRows="0" FldTagImgWidth="0" FldTagImgHeight="0" FldTagAType="" FldTagATarget="" FldTagAPrefix="None" FldTagASuffix="" FldBold="0" FldItalic="0" FldAlign="" FldFmtType="None" FldDtFormat="0" FldNumDigits="0" FldIncLeadDigit="-2" FldUseParen="-2" FldGpDigits="-2" FileNameFld="" FileTypeFld="" FileSizeFld="" ImageWidthFld="" ImageHeightFld="" FldHrefFld="" FldStrFunc="" FldUseDHTMLEditor="0" FldMemoMaxLength="0" FldSelectSize="0" FldSelectMultiple="0" FldSelectFilter="" FldParentSelect="" FldParentSelect2="" FldParentSelect3="" FldParentSelect4="" FldSelectFilterFld="" FldSelectFilterFld2="" FldSelectFilterFld3="" FldSelectFilterFld4="" FldQuoteS="'" FldQuoteE="'" FldColumnWidth="" FldColumnWrap="1" FldAggregate="" FldGroupBy="0" FldGroupByType="" FldGroupByInterval="0" FldRowID="0" FldColumnID="0" FldColumnDateType="" FldColumnDateSelect="0" FldSummaryID="0" FldSummaryType="" FldFilterName="" FldUseRange="0" FldUserIDSelect="0" FldOrderBy="0" FldOrder="" FldGroupByShowSummary="0" FldRptAggSum="0" FldRptAggAvg="0" FldRptAggMin="0" FldRptAggMax="0" FldRptAggCnt="0" FldRptSkipNull="0" FldRepeatColumns="5" FldUploadPath="" FldResizeQuality="0" FldSelectForceSelection="0" FldMemoCRLFReplace="0" FldViewTemplate="" FldEditTemplate="" FldDrillParameter="0" FldDrillTable="" FldDrillSourceFields="" FldDrillTargetFields="" FldOptionTemplate="" FldDropdown="0" FldDropdownWidth="0" FldDropdownHeight="0" FldModalLookup="0" FldModalLookupPageSize="0" />
@@ -99,6 +99,228 @@
       <Properties><![CDATA[[]]]></Properties>
     </ExtProject>
   </Extension>
+  <Extension Name="DOMPDF" Template="dompdf.zip" XmlFile="dompdf.xml" Enabled="1">
+    <ExtProject>
+      <ExtDatabase>
+        <ExtTable TblName="kapal_all_20162018_vasa">
+          <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"portrait"},{"Id":"PageBreakRecordCount","Type":"Integer","Value":0},{"Id":"PageSize","Type":"String","Value":"a4"}]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0001_periode">
+          <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"portrait"},{"Id":"PageBreakRecordCount","Type":"Integer","Value":0},{"Id":"PageSize","Type":"String","Value":"a4"}]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0002_pelabuhan">
+          <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"portrait"},{"Id":"PageBreakRecordCount","Type":"Integer","Value":0},{"Id":"PageSize","Type":"String","Value":"a4"}]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0003_jasa">
+          <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"portrait"},{"Id":"PageBreakRecordCount","Type":"Integer","Value":0},{"Id":"PageSize","Type":"String","Value":"a4"}]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0004_jenis">
+          <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"portrait"},{"Id":"PageBreakRecordCount","Type":"Integer","Value":0},{"Id":"PageSize","Type":"String","Value":"a4"}]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="Report1">
+          <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"portrait"},{"Id":"PageBreakRecordCount","Type":"Integer","Value":0},{"Id":"PageSize","Type":"String","Value":"a4"}]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0101_kapal">
+          <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"portrait"},{"Id":"PageBreakRecordCount","Type":"Integer","Value":0},{"Id":"PageSize","Type":"String","Value":"a4"}]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="Report2">
+          <Properties><![CDATA[[{"Id":"PageOrientation","Type":"String","Value":"portrait"},{"Id":"PageBreakRecordCount","Type":"Integer","Value":0},{"Id":"PageSize","Type":"String","Value":"a4"}]]]></Properties>
+        </ExtTable>
+        <Properties><![CDATA[[]]]></Properties>
+      </ExtDatabase>
+      <Properties><![CDATA[[{"Id":"PdfBackend","Type":"String","Value":"CPDF"},{"Id":"PdfFont","Type":"String","Value":"Helvetica"},{"Id":"MemoryLimit","Type":"String","Value":"128M"},{"Id":"TimeLimit","Type":"Integer","Value":120}]]]></Properties>
+    </ExtProject>
+  </Extension>
+  <Extension Name="DateTimePicker" Template="datetimepicker.zip" XmlFile="datetimepicker.xml" Enabled="1">
+    <ExtProject>
+      <ExtDatabase>
+        <ExtTable TblName="kapal_all_20162018_vasa">
+          <ExtField FldName="MA_PELB">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="NO_PPK1">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="PERIODE">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="NAMA_KAPAL">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="MKPL_JENIS">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="GT_KAPAL">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="LOA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="JASA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="JENIS_GERAKAN">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="BENDERA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="TGL_MULAI_REA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="TGL_SELESAI_REA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="LOKASI_AWAL">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="LOKASI_AKHIR">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="periode2">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <Properties><![CDATA[[]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0001_periode">
+          <ExtField FldName="periode">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="bulan">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="tahun">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <Properties><![CDATA[[]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0002_pelabuhan">
+          <ExtField FldName="ma_pelb">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <Properties><![CDATA[[]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0003_jasa">
+          <ExtField FldName="jasa">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <Properties><![CDATA[[]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0004_jenis">
+          <ExtField FldName="mkpl_jenis">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <Properties><![CDATA[[]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="Report1">
+          <ExtField FldName="MA_PELB">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="NO_PPK1">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="PERIODE">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="NAMA_KAPAL">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="MKPL_JENIS">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="GT_KAPAL">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="LOA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="JASA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="JENIS_GERAKAN">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="BENDERA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="TGL_MULAI_REA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="TGL_SELESAI_REA">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="LOKASI_AWAL">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="LOKASI_AKHIR">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="periode2">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <Properties><![CDATA[[]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="v0101_kapal">
+          <ExtField FldName="ma_pelb">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="periode2">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="MKPL_JENIS">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="jasa">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="start">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="finish">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="dT">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <Properties><![CDATA[[]]]></Properties>
+        </ExtTable>
+        <ExtTable TblName="Report2">
+          <ExtField FldName="ma_pelb">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="periode2">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="MKPL_JENIS">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="jasa">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="start">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="finish">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <ExtField FldName="dT">
+            <Properties><![CDATA[[{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+          </ExtField>
+          <Properties><![CDATA[[]]]></Properties>
+        </ExtTable>
+        <Properties><![CDATA[[]]]></Properties>
+      </ExtDatabase>
+      <Properties><![CDATA[[{"Id":"InputGroup","Type":"Boolean","Value":"1"},{"Id":"Options","Type":"String","Value":""}]]]></Properties>
+    </ExtProject>
+  </Extension>
+  <Extension Name="CAPTCHA" Template="captcha.zip" XmlFile="captcha.xml" Enabled="1">
+    <ExtProject>
+      <ExtDatabase>
+        <Properties><![CDATA[[]]]></Properties>
+      </ExtDatabase>
+      <Properties><![CDATA[[{"Id":"Font","Type":"String","Value":"aftershock"},{"Id":"UseCaptchaInLoginPage","Type":"Boolean","Value":"0"}]]]></Properties>
+    </ExtProject>
+  </Extension>
   <CustomScript ScriptType="Server" ScriptCodeType="Global" ScriptName="Database_Connecting" ScriptCtrlID="" ScriptL1Key="" ScriptL2Key=""><![CDATA[// Database Connecting event
 function Database_Connecting(&$info) {
 	// Example:
@@ -119,7 +341,7 @@ function Database_Connecting(&$info) {
 		$info["db"] = "db_pelindo"; // sesuaikan dengan nama database di komputer localhost
 		$lines=file('00_dbport.txt');foreach ($lines as $line_num => $line){$port = $line;}
 		$info["port"] = $port; //$info["port"] = "3306";
-	} elseif (_CurrentHost () == "pelindo.estiga.net") { // setting koneksi database untuk komputer server
+	} elseif (CurrentHost () == "pelindo.estiga.net") { // setting koneksi database untuk komputer server
 		$info["host"] = "mysql.idhostinger.com";  // sesuaikan dengan ip address atau hostname komputer server
 		$info["user"] = "u473805576_pelin"; // sesuaikan dengan username database di komputer server
 		$info["pass"] = "PresarioCQ43"; // sesuaikan deengan password database di komputer server

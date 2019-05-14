@@ -191,12 +191,14 @@ $EXCEL_MAX_IMAGE_HEIGHT = 550; // Portrait
 <?php
 
 // PDF stylesheet
-$PDF_STYLESHEET_FILENAME = "";
+$PDF_STYLESHEET_FILENAME = "phprptcss/rpdf.css"; // Export PDF CSS styles
 
 // Make sure width/height not larger than page width/height or "infinite table loop" error
 $PDF_MAX_IMAGE_WIDTH = 650; // Portrait
 $PDF_MAX_IMAGE_HEIGHT = 900; // Portrait
 $PDF_IMAGE_SCALE_FACTOR = 1.53; // Scale factor
+$PDF_MEMORY_LIMIT = "128M"; // Memory limit
+$PDF_TIME_LIMIT = 120; // Time limit
 ?>
 <?php
 

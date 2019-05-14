@@ -35,11 +35,13 @@ class ComposerStaticInitcbf2beee36feb43f75273a342ceb33ec
         ),
         'F' => 
         array (
+            'FontLib\\' => 8,
             'Firebase\\JWT\\' => 13,
             'FastRoute\\' => 10,
         ),
         'D' => 
         array (
+            'Dompdf\\' => 7,
             'Defuse\\Crypto\\' => 14,
         ),
     );
@@ -81,6 +83,10 @@ class ComposerStaticInitcbf2beee36feb43f75273a342ceb33ec
         array (
             0 => __DIR__ . '/..' . '/soundasleep/html2text/src',
         ),
+        'FontLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phenx/php-font-lib/src/FontLib',
+        ),
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',
@@ -89,6 +95,10 @@ class ComposerStaticInitcbf2beee36feb43f75273a342ceb33ec
         array (
             0 => __DIR__ . '/..' . '/nikic/fast-route/src',
         ),
+        'Dompdf\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hkvstore/dompdf/src',
+        ),
         'Defuse\\Crypto\\' => 
         array (
             0 => __DIR__ . '/..' . '/defuse/php-encryption/src',
@@ -96,6 +106,17 @@ class ComposerStaticInitcbf2beee36feb43f75273a342ceb33ec
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Svg\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/phenx/php-svg-lib/src',
+            ),
+            'Sabberworm\\CSS' => 
+            array (
+                0 => __DIR__ . '/..' . '/sabberworm/php-css-parser/lib',
+            ),
+        ),
         'P' => 
         array (
             'Pimple' => 
@@ -124,6 +145,12 @@ class ComposerStaticInitcbf2beee36feb43f75273a342ceb33ec
     );
 
     public static $classMap = array (
+        'Cpdf' => __DIR__ . '/..' . '/hkvstore/dompdf/lib/Cpdf.php',
+        'HTML5_Data' => __DIR__ . '/..' . '/hkvstore/dompdf/lib/html5lib/Data.php',
+        'HTML5_InputStream' => __DIR__ . '/..' . '/hkvstore/dompdf/lib/html5lib/InputStream.php',
+        'HTML5_Parser' => __DIR__ . '/..' . '/hkvstore/dompdf/lib/html5lib/Parser.php',
+        'HTML5_Tokenizer' => __DIR__ . '/..' . '/hkvstore/dompdf/lib/html5lib/Tokenizer.php',
+        'HTML5_TreeBuilder' => __DIR__ . '/..' . '/hkvstore/dompdf/lib/html5lib/TreeBuilder.php',
         'Mobile_Detect' => __DIR__ . '/..' . '/mobiledetect/mobiledetectlib/Mobile_Detect.php',
     );
 
