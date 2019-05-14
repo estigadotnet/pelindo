@@ -1,35 +1,36 @@
 <?php
-namespace PHPMaker2019\pelindo_prj;
+namespace PHPReportMaker12\pelindo_prj;
 
 // Session
 if (session_status() !== PHP_SESSION_ACTIVE)
 	session_start(); // Init session data
 
 // Output buffering
-ob_start(); 
+ob_start();
 
 // Autoload
-include_once "autoload.php";
+include_once "rautoload.php";
 ?>
 <?php
 
-// Write header
-WriteHeader(FALSE);
-
 // Create page object
-$index = new index();
+if (!isset($rptindex))
+	$rptindex = new rptindex();
+if (isset($Page))
+	$OldPage = $Page;
+$Page = &$rptindex;
 
 // Run the page
-$index->run();
+$Page->run();
 
 // Setup login status
 SetClientVar("login", LoginStatus());
 ?>
-<?php include_once "header.php" ?>
+<?php include_once "rheader.php" ?>
+<?php $Page->showMessage(); ?>
+<?php include_once "rfooter.php" ?>
 <?php
-$index->showMessage();
-?>
-<?php include_once "footer.php" ?>
-<?php
-$index->terminate();
+$Page->terminate();
+if (isset($OldPage))
+	$Page = $OldPage;
 ?>

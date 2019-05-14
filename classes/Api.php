@@ -1,5 +1,5 @@
 <?php
-namespace PHPMaker2019\pelindo_prj;
+namespace PHPReportMaker12\pelindo_prj;
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -8,12 +8,12 @@ use \Psr\Http\Message\ResponseInterface as Response;
  */
 class Api
 {
-	protected $SecretKey = '8soIN1Mbt7fHxy8e';
+	protected $SecretKey = '9iy5nWLA8L4w6vv0';
 	protected $Algorithm = 'HS512';
 
 	// For some reason, the "Authorization" header is removed by IIS, changed to "X-Authorization"
 	public $AuthHeader = 'X-Authorization';
-	protected $NotBeforeTime = 0;
+	protected $NotBeforeTime = 10;
 	protected $ExpireTime = 600;
 
 	// Configuration

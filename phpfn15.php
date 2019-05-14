@@ -4,7 +4,7 @@
  * PHPMaker Common classes and functions
  * (C) 2002-2019 e.World Technology Limited. All rights reserved.
 */
-namespace PHPMaker2019\pelindo_prj;
+namespace PHPReportMaker12\pelindo_prj;
 
 /**
  * Get request object
@@ -333,7 +333,7 @@ function CurrentLanguageID() {
 function CurrentProjectID() {
 	if (isset($GLOBALS["Page"]))
 		return $GLOBALS["Page"]->ProjectID;
-	return "{4C62D2CC-E7E3-42AE-8875-EDB884DF627D}";
+	return "{861E6985-2C05-482D-BA73-845500113417}";
 }
 
 /**
@@ -1307,9 +1307,9 @@ class ExportJson extends ExportBase
 	}
 }
 
-//
-// Class for export to PDF
-//
+/**
+ * Class for export to PDF
+ */
 class ExportPdf extends ExportBase
 {
 
@@ -6694,27 +6694,27 @@ class AdvancedSecurity
 	// UserID Loading event
 	function UserID_Loading() {
 
-		//echo "UserID Loading: " . $this->CurrentUserID() . "<br>";
+		//echo "UserID Loading: " . $this->currentUserID() . "<br>";
 	}
 
 	// UserID Loaded event
 	function UserID_Loaded() {
 
-		//echo "UserID Loaded: " . $this->UserIDList() . "<br>";
+		//echo "UserID Loaded: " . $this->userIDList() . "<br>";
 	}
 
 	// User Level Loaded event
 	function UserLevel_Loaded() {
 
-		//$this->AddUserPermission(<UserLevelName>, <TableName>, <UserPermission>);
-		//$this->DeleteUserPermission(<UserLevelName>, <TableName>, <UserPermission>);
+		//$this->addUserPermission(<UserLevelName>, <TableName>, <UserPermission>);
+		//$this->deleteUserPermission(<UserLevelName>, <TableName>, <UserPermission>);
 
 	}
 
 	// Table Permission Loading event
 	function TablePermission_Loading() {
 
-		//echo "Table Permission Loading: " . $this->CurrentUserLevelID() . "<br>";
+		//echo "Table Permission Loading: " . $this->currentUserLevelID() . "<br>";
 	}
 
 	// Table Permission Loaded event
@@ -6736,12 +6736,6 @@ class AdvancedSecurity
 		// Example:
 		//$_SESSION['UserEmail'] = $rs['Email'];
 
-	}
-
-	// User PasswordExpired event
-	function User_PasswordExpired(&$rs) {
-
-		//echo "User_PasswordExpired";
 	}
 }
 ?>
@@ -7064,11 +7058,14 @@ function Database_Connecting(&$info) {
 
 	// Example:
 	//var_dump($info);
-	//if ($info["id"] == "DB" && CurrentUserIP() == "127.0.0.1") { // Testing on local PC
-	//	$info["host"] = "locahost";
-	//	$info["user"] = "root";
-	//	$info["pass"] = "";
-	//}
+	// Assume the scripts are generated with connection info for local PC
+	// if (CurrentUserIP() <> "127.0.0.1") { // not connecting to local PC
+	// // connect to the production database
+	// $info["host"] = "localhost";
+	// $info["user"] = "xxx";
+	// $info["pass"] = "yyy";
+	// $info["db"] = "production_db";
+	// }
 
 }
 
@@ -7076,8 +7073,7 @@ function Database_Connecting(&$info) {
 function Database_Connected(&$conn) {
 
 	// Example:
-	//if ($conn->info["id"] == "DB")
-	//	$conn->Execute("Your SQL");
+	//$conn->Execute("Your SQL");
 
 }
 
@@ -7599,9 +7595,7 @@ function WriteAuditTrail($pfx, $dt, $script, $usr, $action, $table, $field, $key
 			"oldvalue" => $oldvalue,
 			"newvalue" => $newvalue
 		];
-
-	// Call AuditTrail Inserting event
-	$writeAuditTrail = AuditTrail_Inserting($rsnew);
+	$writeAuditTrail = TRUE;
 	if ($writeAuditTrail) {
 		if (AUDIT_TRAIL_TO_DATABASE) {
 			$tblcls = PROJECT_NAMESPACE . AUDIT_TRAIL_TABLE_VAR;
@@ -7631,13 +7625,6 @@ function WriteAuditTrail($pfx, $dt, $script, $usr, $action, $table, $field, $key
 			fclose($fileHandler);
 		}
 	}
-}
-
-// AuditTrail Inserting event
-function AuditTrail_Inserting(&$rsnew) {
-
-	//var_dump($rsnew);
-	return TRUE;
 }
 
 // Unformat date time based on format type
@@ -10756,7 +10743,7 @@ class Language
 
 		// Example:
 		//$this->setPhrase("MyID", "MyValue"); // Refer to language file for the actual phrase id
-		//$this->setPhraseClass("MyID", "fa fa-xxx ew-icon"); // Refer to https://fontawesome.com/v4.7.0/icons/ [^] for icon name
+		//$this->setPhraseClass("MyID", "fa fa-xxx ew-icon"); // Refer to http://getbootstrap.com/components/#glyphicons for icon name
 
 	}
 }
@@ -11202,7 +11189,7 @@ class MenuItem
 }
 
 // MenuItem Adding event
-function MenuItem_Adding($item) {
+function MenuItem_Adding(&$item) {
 
 	//var_dump($item);
 	// Return FALSE if menu item not allowed
@@ -11211,13 +11198,13 @@ function MenuItem_Adding($item) {
 }
 
 // Menu Rendering event
-function Menu_Rendering($menu) {
+function Menu_Rendering(&$menu) {
 
 	// Change menu items here
 }
 
 // Menu Rendered event
-function Menu_Rendered($menu) {
+function Menu_Rendered(&$menu) {
 
 	// Clean up here
 }

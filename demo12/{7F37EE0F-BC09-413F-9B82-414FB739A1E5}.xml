@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration date="2019/05/14" author="e.World Technology Ltd.">
+  <project id="{7F37EE0F-BC09-413F-9B82-414FB739A1E5}" file="C:\xampp\htdocs\phprpt12demo\demo12.prp" name="demo12" product="PHPReportMaker" version="12.0" datetime="2019/05/14 10:03:58" languagefolder="phprptlang" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8">
+    <table id="cars" name="cars" caption="cars" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="categories" name="categories" caption="categories" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="customers" name="customers" caption="customers" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="employees" name="employees" caption="employees" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="models" name="models" caption="models" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="orderdetails" name="orderdetails" caption="orderdetails" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="orders" name="orders" caption="orders" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,8;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="connectors2" name="connectors2" caption="connectors 2" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="processes2" name="processes2" caption="processes 2" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="milestones2" name="milestones2" caption="milestones 2" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="cars_2" name="cars 2" caption="cars 2" userlevel="-2,&quot;Anonymous&quot;,8;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="order_details_extended" name="order details extended" caption="order details extended" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="orders_by_product" name="orders_by_product" caption="orders by product" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="employee_sales_by_county_for_1997" name="employee_sales_by_county_for_1997" caption="employee sales by county for 1997" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Quarterly_Orders_By_Product" name="Quarterly Orders By Product" caption="Quarterly Orders by Product" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Sales_By_Customer" name="Sales By Customer" caption="Sales By Customer" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Sales_By_Customer_28Compact29" name="Sales By Customer (Compact)" caption="Sales By Customer (Compact)" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Alphabetical_List_of_Products" name="Alphabetical List of Products" caption="Alphabetical List of Products" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Products_By_Category" name="Products By Category" caption="Products By Category" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Sales_by_Category_for_1997" name="Sales by Category for 1997" caption="Sales by Category for 1997" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Sales_By_Year" name="Sales By Year" caption="Sales By Year" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Sales_By_Order" name="Sales By Order" caption="Sales By Order" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="list_of_products" name="list_of_products" caption="list of products" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Sales_By_Customer_2" name="Sales By Customer 2" caption="Sales By Customer 2" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="order_details_extended_2" name="order details extended 2" caption="order details extended 2" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Dashboard1" name="Dashboard1" caption="Dashboard" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Gantt1" name="Gantt1" caption="Gantt 1" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="myhome" name="myhome.php" caption="Home" userlevel="-2,&quot;Anonymous&quot;,8;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="mynews" name="mynews.php" caption="News" userlevel="-2,&quot;Anonymous&quot;,8;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="gantt3" name="gantt3" caption="gantt 3" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+    <table id="Gantt2" name="Gantt2" caption="Gantt 2" userlevel="-2,&quot;Anonymous&quot;,0;0,&quot;Default&quot;,0;1,&quot;Sales&quot;,0;2,&quot;Manager&quot;,8" priv="1" />
+  </project>
+</configuration>

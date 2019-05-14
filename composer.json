@@ -1,8 +1,8 @@
 {
-	"name": "hkvstore/phpmaker",
-	"version": "2019",
+	"name": "hkvstore/phpreportmaker",
+	"version": "12",
 	"type": "project",
-	"homepage": "http://www.hkvstore.com/phpmaker",
+	"homepage": "http://www.hkvstore.com/phpreportmaker",
 	"license": "Commercial",
 	"authors": [
 		{

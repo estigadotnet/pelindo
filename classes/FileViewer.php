@@ -1,5 +1,5 @@
 <?php
-namespace PHPMaker2019\pelindo_prj;
+namespace PHPReportMaker12\pelindo_prj;
 
 /**
  * File Viewer class

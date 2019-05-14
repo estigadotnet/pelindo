@@ -3,7 +3,7 @@
 /**
  * PHPMaker 2019 configuration file
  */
-namespace PHPMaker2019\pelindo_prj;
+namespace PHPReportMaker12\pelindo_prj;
 
 // Define namespace constant
 define(__NAMESPACE__ . '\PROJECT_NAMESPACE', __NAMESPACE__ . '\\');
@@ -23,7 +23,7 @@ if (DEBUG_ENABLED) {
 }
 
 // Product version
-define(PROJECT_NAMESPACE . "PRODUCT_VERSION", "15.0.10");
+define(PROJECT_NAMESPACE . "PRODUCT_VERSION", "12.0.6");
 
 /**
  * Project level constant and Global variables
@@ -37,16 +37,16 @@ define(PROJECT_NAMESPACE . "PATH_DELIMITER", ((IS_WINDOWS) ? "\\" : "/")); // Ph
 define(PROJECT_NAMESPACE . "UNFORMAT_YEAR", 50); // Unformat year
 define(PROJECT_NAMESPACE . "PROJECT_NAME", "pelindo_prj"); // Project name
 define(PROJECT_NAMESPACE . "CONFIG_FILE_FOLDER", PROJECT_NAME); // Config file name
-define(PROJECT_NAMESPACE . "RANDOM_KEY", 'ZddciHc7kl9pV0Zr'); // Random key for encryption
+define(PROJECT_NAMESPACE . "RANDOM_KEY", 'B6hRptyxopLPHPVu'); // Random key for encryption
 define(PROJECT_NAMESPACE . "ENCRYPTION_KEY", ''); // Encryption key for data protection
-define(PROJECT_NAMESPACE . "PROJECT_STYLESHEET_FILENAME", "phpcss/pelindo_prj.css"); // Project stylesheet file name
-define(PROJECT_NAMESPACE . "PROJECT_CHARSET", "utf-8"); // Project charset
-define(PROJECT_NAMESPACE . "IS_UTF8", TRUE); // Project charset
+define(PROJECT_NAMESPACE . "PROJECT_STYLESHEET_FILENAME", "phprptcss/pelindo_prj.css"); // Project stylesheet file name
+define(PROJECT_NAMESPACE . "PROJECT_CHARSET", ""); // Project charset
+define(PROJECT_NAMESPACE . "IS_UTF8", FALSE); // Project charset
 define(PROJECT_NAMESPACE . "EMAIL_CHARSET", PROJECT_CHARSET); // Email charset
 define(PROJECT_NAMESPACE . "HIGHLIGHT_COMPARE", TRUE); // Highlight compare mode, TRUE(case-insensitive)|FALSE(case-sensitive)
 define(PROJECT_NAMESPACE . "FONT_SIZE", 14);
 define(PROJECT_NAMESPACE . "TEMP_IMAGE_FONT", "DejaVuSans"); // Font for temp files
-$PROJECT_ID = "{4C62D2CC-E7E3-42AE-8875-EDB884DF627D}"; // Project ID (GUID)
+$PROJECT_ID = "{861E6985-2C05-482D-BA73-845500113417}"; // Project ID (GUID)
 $RELATED_PROJECT_ID = "";
 $RELATED_LANGUAGE_FOLDER = "";
 $COMPOSITE_KEY_SEPARATOR = ","; // Composite key separator
@@ -61,7 +61,7 @@ $RESET_HEIGHT = TRUE; // Reset layout height
 $CLASS_PATH = 'classes/'; // With trailing delimiter
 
 // Font path
-$FONT_PATH = realpath($RELATIVE_PATH . 'phpfont'); // No trailing delimiter
+$FONT_PATH = realpath($RELATIVE_PATH . 'phprptfont'); // No trailing delimiter
 
 // External JavaScripts
 $JAVASCRIPT_FILES = [];
@@ -111,7 +111,7 @@ define(PROJECT_NAMESPACE . "PROJECT_CODEPAGE", 0); // Code page
  * functions are enabled and your encoding is supported. See PHP manual for
  * details.
  */
-define(PROJECT_NAMESPACE . "PROJECT_ENCODING", "UTF-8"); // Character encoding
+define(PROJECT_NAMESPACE . "PROJECT_ENCODING", ""); // Character encoding
 define(PROJECT_NAMESPACE . "IS_DOUBLE_BYTE", in_array(PROJECT_ENCODING, ["GBK", "BIG5", "SHIFT_JIS"])); // Double-byte character encoding
 define(PROJECT_NAMESPACE . "FILE_SYSTEM_ENCODING", ""); // File system encoding
 
@@ -138,14 +138,14 @@ define(PROJECT_NAMESPACE . "DB_TIME_ZONE", "");
  * Note: Read https://dev.mysql.com/doc/refman/8.0/en/charset-connection.html
  * before using this setting.
  */
-define(PROJECT_NAMESPACE . "MYSQL_CHARSET", "utf8");
+define(PROJECT_NAMESPACE . "MYSQL_CHARSET", "");
 
 /**
  * PostgreSQL charset (for SET NAMES statement, not used by default)
  * Note: Read https://www.postgresql.org/docs/current/static/multibyte.html
  * before using this setting.
  */
-define(PROJECT_NAMESPACE . "POSTGRESQL_CHARSET", "UTF8");
+define(PROJECT_NAMESPACE . "POSTGRESQL_CHARSET", "");
 
 /**
  * Password (hashed and case-sensitivity)
@@ -200,12 +200,12 @@ define(PROJECT_NAMESPACE . "SESSION_TEMP_IMAGES", PROJECT_NAME . "_TempImages");
 define(PROJECT_NAMESPACE . "SESSION_CAPTCHA_CODE", PROJECT_NAME . "_Captcha"); // Captcha code
 
 // Language settings
-$LANGUAGE_FOLDER = $RELATIVE_PATH . "phplang/";
+$LANGUAGE_FOLDER = $RELATIVE_PATH . "phprptlang/";
 $LANGUAGE_FILE = [];
 $LANGUAGE_FILE[] = ["en", "", "english.xml"];
 define(PROJECT_NAMESPACE . "LANGUAGE_DEFAULT_ID", "en");
 define(PROJECT_NAMESPACE . "SESSION_LANGUAGE_ID", PROJECT_NAME . "_LanguageId"); // Language ID
-define(PROJECT_NAMESPACE . "LOCALE_FOLDER", $RELATIVE_PATH . "phplocale/");
+define(PROJECT_NAMESPACE . "LOCALE_FOLDER", $RELATIVE_PATH . "phprptlocale/");
 
 // Antiforgery token
 define(PROJECT_NAMESPACE . "TOKEN_NAME", "token"); // DO NOT CHANGE!
@@ -268,17 +268,17 @@ define(PROJECT_NAMESPACE . "TABLE_GRID_ADD_ROW_COUNT", "gridaddcnt"); // Grid ad
 // Audit Trail
 define(PROJECT_NAMESPACE . "AUDIT_TRAIL_TO_DATABASE", FALSE); // Write audit trail to DB
 define(PROJECT_NAMESPACE . "AUDIT_TRAIL_DBID", "DB"); // Audit trail DBID
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_TABLE_NAME", ""); // Audit trail table name
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_TABLE_VAR", ""); // Audit trail table var
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_DATETIME", ""); // Audit trail DateTime field name
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_SCRIPT", ""); // Audit trail Script field name
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_USER", ""); // Audit trail User field name
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_ACTION", ""); // Audit trail Action field name
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_TABLE", ""); // Audit trail Table field name
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_FIELD", ""); // Audit trail Field field name
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_KEYVALUE", ""); // Audit trail Key Value field name
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_OLDVALUE", ""); // Audit trail Old Value field name
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_NEWVALUE", ""); // Audit trail New Value field name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_TABLE_NAME", "undefined"); // Audit trail table name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_TABLE_VAR", "undefined"); // Audit trail table var
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_DATETIME", "undefined"); // Audit trail DateTime field name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_SCRIPT", "undefined"); // Audit trail Script field name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_USER", "undefined"); // Audit trail User field name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_ACTION", "undefined"); // Audit trail Action field name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_TABLE", "undefined"); // Audit trail Table field name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_FIELD", "undefined"); // Audit trail Field field name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_KEYVALUE", "undefined"); // Audit trail Key Value field name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_OLDVALUE", "undefined"); // Audit trail Old Value field name
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_FIELD_NAME_NEWVALUE", "undefined"); // Audit trail New Value field name
 
 // Security
 define(PROJECT_NAMESPACE . "ENCRYPTION_ENABLED", FALSE); // Encryption enabled
@@ -291,6 +291,7 @@ define(PROJECT_NAMESPACE . "PHPASS_ITERATION_COUNT_LOG2", "[10,8]"); // Note: Us
 define(PROJECT_NAMESPACE . "PASSWORD_HASH", FALSE); // Use PHP 5.5+ password hashing functions
 
 // User level constants
+define(PROJECT_NAMESPACE . "USER_LEVEL_COMPAT", TRUE); // Use old User Level values. Comment out to use new User Level values (separate values for View/Search).
 define(PROJECT_NAMESPACE . "ALLOW_ADD", 1); // Add
 define(PROJECT_NAMESPACE . "ALLOW_DELETE", 2); // Delete
 define(PROJECT_NAMESPACE . "ALLOW_EDIT", 4); // Edit
@@ -323,7 +324,7 @@ define(PROJECT_NAMESPACE . "LOGIN_USERNAME_FIELD_NAME", "");
 define(PROJECT_NAMESPACE . "LOGIN_PASSWORD_FIELD_NAME", "");
 define(PROJECT_NAMESPACE . "USER_ID_FIELD_NAME", "null");
 define(PROJECT_NAMESPACE . "USER_LEVEL_FIELD_NAME", "null");
-define(PROJECT_NAMESPACE . "USER_PROFILE_FIELD_NAME", "null");
+define(PROJECT_NAMESPACE . "USER_PROFILE_FIELD_NAME", "undefined");
 define(PROJECT_NAMESPACE . "REGISTER_ACTIVATE_FIELD_NAME", "");
 define(PROJECT_NAMESPACE . "USER_EMAIL_FIELD_NAME", "");
 
@@ -363,7 +364,7 @@ define(PROJECT_NAMESPACE . "EMAIL_FORGOTPWD_TEMPLATE", "forgotpwd.html");
 define(PROJECT_NAMESPACE . "EMAIL_NOTIFY_TEMPLATE", "notify.html");
 define(PROJECT_NAMESPACE . "EMAIL_REGISTER_TEMPLATE", "register.html");
 define(PROJECT_NAMESPACE . "EMAIL_RESETPWD_TEMPLATE", "resetpwd.html");
-$EMAIL_TEMPLATE_PATH = "phphtml"; // Template path
+$EMAIL_TEMPLATE_PATH = ""; // Template path
 
 // Remote file
 $REMOTE_FILE_PATTERN = '/^((https?\:)?|ftps?\:|s3:)\/\//i';
@@ -372,18 +373,18 @@ $REMOTE_FILE_PATTERN = '/^((https?\:)?|ftps?\:|s3:)\/\//i';
 $UPLOAD_TYPE = "POST"; // HTTP request method for the file uploads, e.g. "POST", "PUT"
 define(PROJECT_NAMESPACE . "UPLOAD_TEMP_PATH", ""); // Upload temp path (absolute local physical path)
 define(PROJECT_NAMESPACE . "UPLOAD_TEMP_HREF_PATH", ""); // Upload temp href path (absolute URL path for download)
-define(PROJECT_NAMESPACE . "UPLOAD_DEST_PATH", ""); // Upload destination path (relative to app root)
+define(PROJECT_NAMESPACE . "UPLOAD_DEST_PATH", "files/"); // Upload destination path (relative to app root)
 define(PROJECT_NAMESPACE . "UPLOAD_HREF_PATH", ""); // Upload file href path (for download)
 define(PROJECT_NAMESPACE . "UPLOAD_TEMP_FOLDER_PREFIX", "temp__"); // Upload temp folders prefix
 define(PROJECT_NAMESPACE . "UPLOAD_TEMP_FOLDER_TIME_LIMIT", 1440); // Upload temp folder time limit (minutes)
 define(PROJECT_NAMESPACE . "UPLOAD_THUMBNAIL_FOLDER", "thumbnail"); // Temporary thumbnail folder
 define(PROJECT_NAMESPACE . "UPLOAD_THUMBNAIL_WIDTH", 200); // Temporary thumbnail max width
 define(PROJECT_NAMESPACE . "UPLOAD_THUMBNAIL_HEIGHT", 0); // Temporary thumbnail max height
-define(PROJECT_NAMESPACE . "UPLOAD_ALLOWED_FILE_EXT", "gif,jpg,jpeg,bmp,png,doc,docx,xls,xlsx,pdf,zip"); // Allowed file extensions
+define(PROJECT_NAMESPACE . "UPLOAD_ALLOWED_FILE_EXT", ""); // Allowed file extensions
 define(PROJECT_NAMESPACE . "IMAGE_ALLOWED_FILE_EXT", "gif,jpe,jpeg,jpg,png,bmp"); // Allowed file extensions for images
 define(PROJECT_NAMESPACE . "DOWNLOAD_ALLOWED_FILE_EXT", "csv,pdf,xls,doc,xlsx,docx"); // Allowed file extensions for download (non-image)
 define(PROJECT_NAMESPACE . "ENCRYPT_FILE_PATH", TRUE); // Encrypt file path
-define(PROJECT_NAMESPACE . "MAX_FILE_SIZE", 2000000); // Max file size
+define(PROJECT_NAMESPACE . "MAX_FILE_SIZE", 0); // Max file size
 define(PROJECT_NAMESPACE . "MAX_FILE_COUNT", 0); // Max file count
 define(PROJECT_NAMESPACE . "THUMBNAIL_DEFAULT_WIDTH", 0); // Thumbnail default width
 define(PROJECT_NAMESPACE . "THUMBNAIL_DEFAULT_HEIGHT", 0); // Thumbnail default height
@@ -422,18 +423,18 @@ $API_PAGE_ACTIONS = [API_LIST_ACTION, API_VIEW_ACTION, API_ADD_ACTION, API_EDIT_
 // Image resize
 $THUMBNAIL_CLASS = "\PHPThumb\GD";
 define(PROJECT_NAMESPACE . "REDUCE_IMAGE_ONLY", TRUE);
-define(PROJECT_NAMESPACE . "KEEP_ASPECT_RATIO", FALSE);
+define(PROJECT_NAMESPACE . "KEEP_ASPECT_RATIO", TRUE);
 $RESIZE_OPTIONS = ["keepAspectRatio" => KEEP_ASPECT_RATIO, "resizeUp" => !REDUCE_IMAGE_ONLY, "jpegQuality" => THUMBNAIL_DEFAULT_QUALITY];
 
 // Audit trail
-define(PROJECT_NAMESPACE . "AUDIT_TRAIL_PATH", ""); // Audit trail path (relative to app root)
+define(PROJECT_NAMESPACE . "AUDIT_TRAIL_PATH", "undefined"); // Audit trail path (relative to app root)
 
 // Import records
 define(PROJECT_NAMESPACE . "IMPORT_CSV_DELIMITER", ","); // Import to CSV delimiter
-define(PROJECT_NAMESPACE . "IMPORT_CSV_QUOTE_CHARACTER", "\""); // Import to CSV quote character
+define(PROJECT_NAMESPACE . "IMPORT_CSV_QUOTE_CHARACTER", ""); // Import to CSV quote character
 define(PROJECT_NAMESPACE . "IMPORT_MAX_EXECUTION_TIME", 300); // Import max execution time
 define(PROJECT_NAMESPACE . "IMPORT_FILE_ALLOWED_EXT", "csv,xls,xlsx"); // Import file allowed extensions
-define(PROJECT_NAMESPACE . "IMPORT_INSERT_ONLY", TRUE); // Import by insert only
+define(PROJECT_NAMESPACE . "IMPORT_INSERT_ONLY", FALSE); // Import by insert only
 define(PROJECT_NAMESPACE . "IMPORT_USE_TRANSACTION", FALSE); // Import use transaction
 
 // Export records
@@ -442,11 +443,11 @@ define(PROJECT_NAMESPACE . "EXPORT_ALL_TIME_LIMIT", 120); // Export all records 
 define(PROJECT_NAMESPACE . "XML_ENCODING", "utf-8"); // Encoding for Export to XML
 define(PROJECT_NAMESPACE . "EXPORT_ORIGINAL_VALUE", FALSE);
 define(PROJECT_NAMESPACE . "EXPORT_FIELD_CAPTION", FALSE); // TRUE to export field caption
-define(PROJECT_NAMESPACE . "EXPORT_FIELD_IMAGE", TRUE); // TRUE to export field image
-define(PROJECT_NAMESPACE . "EXPORT_CSS_STYLES", TRUE); // TRUE to export CSS styles
-define(PROJECT_NAMESPACE . "EXPORT_MASTER_RECORD", TRUE); // TRUE to export master record
+define(PROJECT_NAMESPACE . "EXPORT_FIELD_IMAGE", FALSE); // TRUE to export field image
+define(PROJECT_NAMESPACE . "EXPORT_CSS_STYLES", FALSE); // TRUE to export CSS styles
+define(PROJECT_NAMESPACE . "EXPORT_MASTER_RECORD", FALSE); // TRUE to export master record
 define(PROJECT_NAMESPACE . "EXPORT_MASTER_RECORD_FOR_CSV", FALSE); // TRUE to export master record for CSV
-define(PROJECT_NAMESPACE . "EXPORT_DETAIL_RECORDS", TRUE); // TRUE to export detail records
+define(PROJECT_NAMESPACE . "EXPORT_DETAIL_RECORDS", FALSE); // TRUE to export detail records
 define(PROJECT_NAMESPACE . "EXPORT_DETAIL_RECORDS_FOR_CSV", FALSE); // TRUE to export detail records for CSV
 $EXPORT = [
 	"email" => "ExportEmail",
