@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<ew-language date="2019/5/14" version="12.0.1" id="en" name="English" desc="English" author="e.World Technology Ltd.">
+<ew-language date="2019/5/28" version="12.0.1" id="en" name="English" desc="English" author="e.World Technology Ltd.">
   <!-- 
 	*** Important Notes:
 	1. Language ID should follow: https://developers.google.com/recaptcha/docs/language,
@@ -403,9 +403,6 @@
   <project>
     <phrase id="bodytitle" value="PELINDO III" />
     <phrase id="footertext" value="&amp;copy;2019 ESTIGADOTNET. All rights reserved." />
-    <menu id="7">
-      <phrase id="menutext" value="v 0101 kapal" />
-    </menu>
     <menu id="8">
       <phrase id="menutext" value="Kapal 2" />
     </menu>
@@ -554,30 +551,6 @@
       </field>
       <field id="periode2">
         <phrase id="fldcaption" value="Periode" />
-      </field>
-    </table>
-    <table id="v0101_kapal_base">
-      <phrase id="tblcaption" value="v 0101 kapal" />
-      <field id="ma_pelb">
-        <phrase id="fldcaption" value="ma pelb" />
-      </field>
-      <field id="periode2">
-        <phrase id="fldcaption" value="periode 2" />
-      </field>
-      <field id="mkpl_jenis">
-        <phrase id="fldcaption" value="MKPL JENIS" />
-      </field>
-      <field id="jasa">
-        <phrase id="fldcaption" value="jasa" />
-      </field>
-      <field id="start">
-        <phrase id="fldcaption" value="start" />
-      </field>
-      <field id="finish">
-        <phrase id="fldcaption" value="finish" />
-      </field>
-      <field id="dt">
-        <phrase id="fldcaption" value="d T" />
       </field>
     </table>
     <table id="report2">
