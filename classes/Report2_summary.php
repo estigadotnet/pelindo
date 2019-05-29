@@ -985,12 +985,12 @@ class Report2_summary extends Report2
 
 			// start
 			$this->start->ViewValue = $this->start->CurrentValue;
-			$this->start->ViewValue = FormatDateTime($this->start->ViewValue, 0);
+			$this->start->ViewValue = FormatDateTime($this->start->ViewValue, 11);
 			$this->start->CellAttrs["class"] = ($this->RecordCount % 2 <> 1 ? "ew-table-alt-row" : "ew-table-row");
 
 			// finish
 			$this->finish->ViewValue = $this->finish->CurrentValue;
-			$this->finish->ViewValue = FormatDateTime($this->finish->ViewValue, 0);
+			$this->finish->ViewValue = FormatDateTime($this->finish->ViewValue, 11);
 			$this->finish->CellAttrs["class"] = ($this->RecordCount % 2 <> 1 ? "ew-table-alt-row" : "ew-table-row");
 
 			// dT

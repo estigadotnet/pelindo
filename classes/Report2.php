@@ -75,16 +75,16 @@ class Report2 extends ReportTable
 		$this->fields['jasa'] = &$this->jasa;
 
 		// start
-		$this->start = new ReportField('Report2', 'Report2', 'x_start', 'start', '`start`', 135, 0, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->start = new ReportField('Report2', 'Report2', 'x_start', 'start', '`start`', 135, 11, FALSE, 'FORMATTED TEXT', 'TEXT');
 		$this->start->Sortable = TRUE; // Allow sort
-		$this->start->DefaultErrorMessage = str_replace("%s", $GLOBALS["DATE_FORMAT"], $ReportLanguage->phrase("IncorrectDate"));
+		$this->start->DefaultErrorMessage = $ReportLanguage->phrase("IncorrectField");
 		$this->start->DateFilter = "";
 		$this->fields['start'] = &$this->start;
 
 		// finish
-		$this->finish = new ReportField('Report2', 'Report2', 'x_finish', 'finish', '`finish`', 135, 0, FALSE, 'FORMATTED TEXT', 'TEXT');
+		$this->finish = new ReportField('Report2', 'Report2', 'x_finish', 'finish', '`finish`', 135, 11, FALSE, 'FORMATTED TEXT', 'TEXT');
 		$this->finish->Sortable = TRUE; // Allow sort
-		$this->finish->DefaultErrorMessage = str_replace("%s", $GLOBALS["DATE_FORMAT"], $ReportLanguage->phrase("IncorrectDate"));
+		$this->finish->DefaultErrorMessage = $ReportLanguage->phrase("IncorrectField");
 		$this->finish->DateFilter = "";
 		$this->fields['finish'] = &$this->finish;
 

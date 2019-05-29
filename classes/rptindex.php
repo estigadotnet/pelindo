@@ -302,7 +302,7 @@ class rptindex
 		// If session expired, show session expired message
 		if (Get("expired") == "1")
 			$this->setFailureMessage($ReportLanguage->phrase("SessionExpired"));
-		$this->terminate("Report1smry.php"); // Exit and go to default page
+		$this->terminate("Report2smry.php"); // Exit and go to default page
 	}
 
 	// Page Load event
