@@ -407,10 +407,10 @@
       <phrase id="menutext" value="v 0101 kapal" />
     </menu>
     <menu id="8">
-      <phrase id="menutext" value="Kapal 2" />
+      <phrase id="menutext" value="Kapal" />
     </menu>
     <menu id="9">
-      <phrase id="menutext" value="Chart 1" />
+      <phrase id="menutext" value="Chart" />
     </menu>
     <menu id="1">
       <phrase id="menutext" value="kapal all 20162018 vasa" />
@@ -557,9 +557,9 @@
       </field>
     </table>
     <table id="report2">
-      <phrase id="tblcaption" value="Kapal 2" />
+      <phrase id="tblcaption" value="Kapal" />
       <chart id="chart1">
-        <phrase id="chartcaption" value="Chart 1" />
+        <phrase id="chartcaption" value="Chart" />
         <phrase id="chartxaxisname" value="dT" />
         <phrase id="chartyaxisname" value="Periode" />
       </chart>
