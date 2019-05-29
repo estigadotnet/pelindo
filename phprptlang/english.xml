@@ -582,7 +582,7 @@
         <phrase id="fldcaption" value="Finish" />
       </field>
       <field id="dt">
-        <phrase id="fldcaption" value="dT" />
+        <phrase id="fldcaption" value="dT (detik)" />
       </field>
     </table>
     <table id="v0101_kapal_base">
